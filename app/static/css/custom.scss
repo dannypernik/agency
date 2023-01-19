@@ -464,12 +464,20 @@ div.alert {
 
 // Home page
 
-// X-large backgrounds //
+#bg-vid {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 // #home-1 photo by Derek Thomson on Unsplash: https://unsplash.com/photos/NqJYQ3m_rVA
 
 #home-1 {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/simon-berger-twukN12EN7c-unsplash.jpg) center bottom no-repeat;
+  position: relative;
+  // background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/simon-berger-twukN12EN7c-unsplash.jpg) center bottom no-repeat;
 }
 
 #home-3 {

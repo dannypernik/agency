@@ -7076,8 +7076,17 @@ div.alert {
   overflow: unset;
 }
 
+#bg-vid {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 #home-1 {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/simon-berger-twukN12EN7c-unsplash.jpg) center bottom no-repeat;
+  position: relative;
 }
 
 #home-3 {
