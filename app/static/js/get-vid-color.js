@@ -34,9 +34,9 @@ var update_bg = function(){
   }
 
   // Average the rgb sums to get the average color of the frame in rgb
-  rgb_sums[0] = Math.floor(255  - rgb_sums[0]/pixel_count);
-  rgb_sums[1] = Math.floor(255 - rgb_sums[1]/pixel_count);
-  rgb_sums[2] = Math.floor(255 - rgb_sums[2]/pixel_count);
+  rgb_sums[0] = Math.floor(285  - rgb_sums[0]/pixel_count);
+  rgb_sums[1] = Math.floor(285 - rgb_sums[1]/pixel_count);
+  rgb_sums[2] = Math.floor(285 - rgb_sums[2]/pixel_count);
 
   // Set the background color to the new color
   var new_rgb = 'rgb(' + rgb_sums.join(',') + ')';
