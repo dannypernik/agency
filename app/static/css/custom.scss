@@ -20,6 +20,10 @@ $title-font: 'Montserrat Alternates', 'Helvetica', sans-serif;
 
 @import "menu.css";
 
+
+:root {
+  --dynamic-color: #ffffff;
+}
 // Sitewide stylings //
 html {
   height: 100%;
@@ -498,6 +502,10 @@ div.alert {
   }
 }
 
+.dynamic-color {
+  color: var(--dynamic-color);
+}
+
 #home-logo {
   position: relative;
   display: block;
@@ -528,12 +536,24 @@ div.alert {
   list-style: none;
 }
 
-.home-nav a {
+.inverse {
   color: white;
+}
+
+.inverse a {
+  color: white;
+}
+
+.home-nav a {
+  color: var(--dynamic-color);
   font-size: 2rem;
   text-decoration: none;
   padding: calc(3rem + 2vw) 0;
   text-transform: capitalize;
+}
+
+svg g {
+  fill: var(--dynamic-color);
 }
 
 .home-nav a:focus, .home-nav a:hover {
@@ -548,14 +568,6 @@ div.alert {
 
 .home-section.end {
   min-height: calc(100vh - 30rem);
-}
-
-.inverse {
-  color: white;
-}
-
-.inverse a {
-  color: white;
 }
 
 .home-next {
