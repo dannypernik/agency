@@ -20,11 +20,10 @@ $title-font: 'Montserrat Alternates', 'Helvetica', sans-serif;
 
 @import "menu.css";
 
-
 :root {
   --dynamic-color: #ffffff;
 }
-// Sitewide stylings //
+
 html {
   height: 100%;
   scroll-padding-top: 60px;
@@ -516,7 +515,6 @@ div.alert {
 #home-title {
   font-family: "Montserrat Alternates", sans-serif;
   font-size: calc(1.8rem + 3vw);
-  font-weight: 1000;
 }
 
 #home-tagline {
