@@ -4,8 +4,9 @@
 
 {% block container %}
 
-  <video playsinline autoplay muted loop poster="polina.jpg" id="bg-vid">
+  <video playsinline autoplay muted loop poster="{{ url_for('static', filename='img/bg-img.jpg') }}" id="bg-vid">
     <source src="{{ url_for('static', filename='media/lay-z-owl-pexels2.webm')}}" type="video/webm">
+    <source src="{{ url_for('static', filename='media/lay-z-owl-pexels2.mp4')}}" type="video/mp4">
   </video>
   <canvas id="my-canvas" style="display:none" width="250" height="150"></canvas>
   <div id="home-1" class="inverse text-center">
@@ -42,7 +43,7 @@
     </div>
     <div class="row justify-content-center">
       <div class="col col-sm-11">
-        <a href="" class="cta btn">
+        <a onclick="playPause('bg-vid')" class="cta btn">
           Call to action
         </a>
 
@@ -134,8 +135,12 @@
   <script src="{{ url_for('static', filename='js/get-vid-color.js') }}"></script>
 
   <script>
-    function onSubmit(token) {
-     document.getElementById("inquiry-form").submit();
+    function playPause (id) {
+      var video = document.getElementById('bg-vid')
+      if (video.paused) 
+        video.play(); 
+      else 
+        video.pause();
     }
   </script>
 {% endblock end_scripts %}

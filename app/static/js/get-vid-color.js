@@ -6,12 +6,15 @@
 var my_video = document.getElementById('bg-vid');
 var my_canvas = document.getElementById('my-canvas');
 var my_canvas_context = my_canvas.getContext('2d');
+var rgb_min = [20, 72, 92]
+var rgb_brighten = [20, 20, 20]
+
 
 var update_bg = function(){
   // If the video isn't playing, don't loop
-  // if(my_video.paused || my_video.ended){
-  //   return false;
-  // }
+  if(my_video.paused || my_video.ended){
+    return false;
+  }
 
   // Draw the current frame of the video onto the hidden canvas
   my_canvas_context.drawImage(my_video, 0, 0, window.innerWidth/2, window.innerHeight/2);
@@ -20,8 +23,8 @@ var update_bg = function(){
   var frame_data = my_canvas_context.getImageData(0, 0, window.innerWidth/2, window.innerHeight/2).data;
 
   // Get the length of the data, divide that by 4 to get the number of pixels
-  // then divide that by 4 again so we check the color of every 4th pixel
-  var frame_data_length = (frame_data.length / 4) / 4;
+  // then divide that by 100 so we check the color of every 100th pixel
+  var frame_data_length = (frame_data.length / 4) / 100;
 
   // Loop through the raw image data, adding the rgb of every 4th pixel to rgb_sums
   var pixel_count = 0;
@@ -33,17 +36,14 @@ var update_bg = function(){
     pixel_count++;
   }
 
-  // Average the rgb sums to get the average color of the frame in rgb
-  rgb_sums[0] = Math.floor(285  - rgb_sums[0]/pixel_count);
-  rgb_sums[1] = Math.floor(285 - rgb_sums[1]/pixel_count);
-  rgb_sums[2] = Math.floor(285 - rgb_sums[2]/pixel_count);
+  // Get the inverse of the frame's average color, make adjustments to brightest and darkest values
+  rgb_sums[0] = Math.max(Math.floor(255 + rgb_brighten[0] - rgb_sums[0]/pixel_count), rgb_min[0]);
+  rgb_sums[1] = Math.max(Math.floor(255 + rgb_brighten[1] - rgb_sums[1]/pixel_count), rgb_min[1]);
+  rgb_sums[2] = Math.max(Math.floor(255 + rgb_brighten[2] - rgb_sums[2]/pixel_count), rgb_min[2]);
 
   // Set the background color to the new color
   var new_rgb = 'rgb(' + rgb_sums.join(',') + ')';
   document.documentElement.style.setProperty('--dynamic-color', new_rgb );
-
-  // // Update the rgb label
-  // current_rgb.innerHTML = new_rgb;
 
   // Repeat every 1/10th of a second
   setTimeout(update_bg, 100);
@@ -58,3 +58,4 @@ var init = function(){
 }
 
 document.addEventListener("DOMContentLoaded", init);
+my_video.addEventListener('play', init);
