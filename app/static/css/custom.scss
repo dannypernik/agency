@@ -582,6 +582,10 @@ svg g {
   display: table;
   margin: calc(2rem + 1vw) auto 3rem;
   text-align: center;
+
+  a {
+    color: $secondary-color;
+  }
 }
 
 .bi-chevron-down {

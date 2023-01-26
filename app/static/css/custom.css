@@ -7183,6 +7183,9 @@ svg g {
   margin: calc(2rem + 1vw) auto 3rem;
   text-align: center;
 }
+.home-next a {
+  color: #4ad1cc;
+}
 
 .bi-chevron-down {
   font-size: 1rem;
