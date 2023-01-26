@@ -28,7 +28,7 @@
       <script async src="{{ url_for('static', filename='js/menu.js') }}"></script>
     {% endblock head %}
   </head>
-  <body>
+  <body class="{% block body_class %}{% endblock body_class%}">
     <div class="content">
       {% block navbar %}
         

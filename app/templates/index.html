@@ -2,13 +2,18 @@
 
 {% block navbar %}{% endblock navbar %}
 
+{% block body_class %}
+  inverse
+{% endblock body_class %}
+
 {% block container %}
 
-  <video playsinline autoplay muted loop poster="{{ url_for('static', filename='img/bg-img.jpg') }}" id="bg-vid">
+  <video playsinline autoplay muted poster="{{ url_for('static', filename='img/bg-img.jpg') }}" id="bg-vid">
     <source src="{{ url_for('static', filename='media/lay-z-owl-pexels2.webm')}}" type="video/webm">
     <source src="{{ url_for('static', filename='media/lay-z-owl-pexels2.mp4')}}" type="video/mp4">
   </video>
   <canvas id="my-canvas" style="display:none" width="250" height="150"></canvas>
+  <!-- <div id="home-gradient"></div> -->
   <div id="home-1" class="inverse text-center">
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}

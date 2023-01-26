@@ -2,7 +2,7 @@ $font-size-root: 10px;
 $lead-font-size: calc(2rem + 0.1vw);
 $lead-font-weight: inherit;
 $spacer: 2rem;
-$primary-color: #1C4D65;
+$primary-color: #03202c;
 $secondary-color: #4ad1cc;//58bba4;
 $highlight-color: #d35137;//e97435;;
 $grey: #ddd;
@@ -229,11 +229,6 @@ a:hover {
   color: $secondary-color;
 }
 
-.inverse a:hover, .inverse a:hover h2 {
-  font-weight: 600;
-  color: white;
-}
-
 a.btn:hover {
   text-decoration: none;
 }
@@ -247,7 +242,7 @@ a:before {
   visibility: hidden;
 }
 
-button, .btn, input[type="submit"] {
+button, .btn, input[type='submit'] {
   display: block;
   margin: 0 auto 2rem;
   padding: 1rem 2rem;
@@ -259,23 +254,37 @@ button, .btn, input[type="submit"] {
   font-weight: 600;
 }
 
-button:hover, .btn:hover, input[type="submit"]:hover, .menu-link:hover {
+button:hover, .btn:hover, input[type='submit']:hover, .menu-link:hover {
   background-color: $secondary-color;
   border-color: $secondary-color;
   color: white;
 }
 
-.inverse button, .inverse .btn, .inverse input[type="submit"] {
-  background-color: $secondary-color;
-  border-color: $secondary-color;
+.inverse {
+  background-color: $primary-color;
+  color: white;
+
+  button, .btn, input[type='submit'] {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+  }
+
+  button:hover, .btn:hover, input[type='submit']:hover {
+    background-color: darken($secondary-color, 15%);
+    border-color: darken($secondary-color, 15%);
+  }
+
+  a {
+    color: white;
+  }
+
+  a:hover, a:hover h4 {
+    font-weight: 600;
+    //color: white;
+  }
 }
 
-.inverse button:hover, .inverse .btn:hover, .inverse input[type="submit"]:hover {
-  background-color: darken($secondary-color, 15%);
-  border-color: darken($secondary-color, 15%);
-}
-
-input[type="submit"] {
+input[type='submit'] {
   margin-top: 2rem;
 }
 
@@ -450,10 +459,12 @@ div.alert {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  border: none;
-  border-bottom: 1px solid $primary-color;
   background-color: $primary-color;
   z-index: 100;
+}
+
+.transparent {
+  background-color: transparent;
 }
 
 .nav-gap {
@@ -480,15 +491,14 @@ div.alert {
 
 #home-1 {
   position: relative;
-  // background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/simon-berger-twukN12EN7c-unsplash.jpg) center bottom no-repeat;
+  background: linear-gradient(180deg, transparent 50%, $primary-color);
 }
 
 #home-3 {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/te-lun-ou-yang-TFZlTFOWReA-unsplash.jpg) center bottom no-repeat;
+  background: linear-gradient(180deg, $primary-color 0%, transparent 50%, $primary-color), url(../img/te-lun-ou-yang-TFZlTFOWReA-unsplash.jpg) center bottom no-repeat;
 }
 
 #home-1, #home-3 {
-  background-attachment: fixed;
   background-size: cover;
   min-height: 100vh;
   overflow: auto;
@@ -499,6 +509,14 @@ div.alert {
   #home-1, #home-3 {
     background-attachment: scroll;
   }
+}
+
+#home-gradient {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  
 }
 
 .dynamic-color {
@@ -528,34 +546,26 @@ div.alert {
   justify-content: space-between;
   background-color: transparent;
   border: none;
-}
 
-.home-nav li {
-  list-style: none;
-}
+  li {
+    list-style: none;
+  }
 
-.inverse {
-  color: white;
-}
+  a {
+    color: var(--dynamic-color);
+    font-size: 2rem;
+    text-decoration: none;
+    padding: calc(3rem + 2vw) 0;
+    text-transform: capitalize;
+  }
 
-.inverse a {
-  color: white;
-}
-
-.home-nav a {
-  color: var(--dynamic-color);
-  font-size: 2rem;
-  text-decoration: none;
-  padding: calc(3rem + 2vw) 0;
-  text-transform: capitalize;
+  a:focus, a:hover {
+    font-weight: 600;
+  }
 }
 
 svg g {
   fill: var(--dynamic-color);
-}
-
-.home-nav a:focus, .home-nav a:hover {
-  font-weight: 600;
 }
 
 .home-section {

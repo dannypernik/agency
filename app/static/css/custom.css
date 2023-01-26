@@ -6666,7 +6666,7 @@ html {
 body {
   height: 100%;
   font-family: "Montserrat", "Helvetica", sans-serif;
-  color: #1C4D65;
+  color: #03202c;
   font-size: 1.6rem;
   display: flex;
   flex-direction: column;
@@ -6726,11 +6726,11 @@ input, textarea {
   border-bottom: 1px solid #999;
   width: 100%;
   outline: none;
-  color: #1C4D65;
+  color: #03202c;
 }
 
 input:focus, textarea:focus {
-  border-bottom: 1px solid #1C4D65;
+  border-bottom: 1px solid #03202c;
 }
 
 input[type=checkbox] {
@@ -6752,11 +6752,11 @@ input[type=checkbox] + label::before {
   margin-right: 10px;
   width: 20px;
   height: 20px;
-  border: 2px solid #1C4D65;
+  border: 2px solid #03202c;
   border-radius: 3px;
 }
 input[type=checkbox]:checked + label::before {
-  background-color: #1C4D65;
+  background-color: #03202c;
 }
 input[type=checkbox]:checked + label::after {
   content: "";
@@ -6770,7 +6770,7 @@ input[type=checkbox]:checked + label::after {
   transform: rotate(-45deg);
 }
 input[type=checkbox]:focus + label::before {
-  box-shadow: 0 0px 8px #1C4D65;
+  box-shadow: 0 0px 8px #03202c;
 }
 
 input[type=radio] {
@@ -6792,7 +6792,7 @@ input[type=radio] + label::before {
   width: 2rem;
   height: 2rem;
   background: transparent;
-  border: 2px solid #1C4D65;
+  border: 2px solid #03202c;
   border-radius: 50%;
 }
 input[type=radio] + label::after {
@@ -6806,10 +6806,10 @@ input[type=radio] + label::after {
   height: 1rem;
 }
 input[type=radio]:checked + label::after {
-  background: #1C4D65;
+  background: #03202c;
 }
 input[type=radio]:focus + label::before {
-  box-shadow: 0 0px 8px #1C4D65;
+  box-shadow: 0 0px 8px #03202c;
 }
 
 .radio-wrapper {
@@ -6825,8 +6825,8 @@ input[type=radio]:focus + label::before {
 }
 
 select {
-  color: #1C4D65;
-  border: 2px solid #1C4D65;
+  color: #03202c;
+  border: 2px solid #03202c;
   border-radius: 10px;
   padding: 0.5rem 1rem;
 }
@@ -6846,11 +6846,6 @@ a:hover {
   color: #4ad1cc;
 }
 
-.inverse a:hover, .inverse a:hover h2, .inverse a:hover .h2 {
-  font-weight: 600;
-  color: white;
-}
-
 a.btn:hover {
   text-decoration: none;
 }
@@ -6868,8 +6863,8 @@ button, .btn, input[type=submit] {
   display: block;
   margin: 0 auto 2rem;
   padding: 1rem 2rem;
-  background-color: #1C4D65;
-  border: 2px solid #1C4D65;
+  background-color: #03202c;
+  border: 2px solid #03202c;
   color: white;
   transition: 0.3s;
   font-size: 1.7rem;
@@ -6882,14 +6877,23 @@ button:hover, .btn:hover, input[type=submit]:hover, .menu-link:hover {
   color: white;
 }
 
+.inverse {
+  background-color: #03202c;
+  color: white;
+}
 .inverse button, .inverse .btn, .inverse input[type=submit] {
   background-color: #4ad1cc;
   border-color: #4ad1cc;
 }
-
 .inverse button:hover, .inverse .btn:hover, .inverse input[type=submit]:hover {
   background-color: #2aa5a0;
   border-color: #2aa5a0;
+}
+.inverse a {
+  color: white;
+}
+.inverse a:hover, .inverse a:hover h4, .inverse a:hover .h4 {
+  font-weight: 600;
 }
 
 input[type=submit] {
@@ -6910,8 +6914,8 @@ a.btn {
 }
 
 .btn.sec {
-  color: #1C4D65;
-  border-color: #1C4D65;
+  color: #03202c;
+  border-color: #03202c;
   background-color: transparent;
   font-weight: 400;
   width: fit-content;
@@ -7006,7 +7010,7 @@ div.alert {
   width: 100%;
   bottom: 0;
   padding: 20px;
-  background-color: #1C4D65;
+  background-color: #03202c;
   color: white;
   margin-top: 11rem;
 }
@@ -7052,7 +7056,7 @@ div.alert {
 .menu-link {
   height: 60px;
   border-bottom: 1px solid #ddd;
-  color: #1C4D65;
+  color: #03202c;
   transition: 0.3s;
 }
 
@@ -7065,10 +7069,12 @@ div.alert {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  border: none;
-  border-bottom: 1px solid #1C4D65;
-  background-color: #1C4D65;
+  background-color: #03202c;
   z-index: 100;
+}
+
+.transparent {
+  background-color: transparent;
 }
 
 .nav-gap {
@@ -7091,14 +7097,14 @@ div.alert {
 
 #home-1 {
   position: relative;
+  background: linear-gradient(180deg, transparent 50%, #03202c);
 }
 
 #home-3 {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/te-lun-ou-yang-TFZlTFOWReA-unsplash.jpg) center bottom no-repeat;
+  background: linear-gradient(180deg, #03202c 0%, transparent 50%, #03202c), url(../img/te-lun-ou-yang-TFZlTFOWReA-unsplash.jpg) center bottom no-repeat;
 }
 
 #home-1, #home-3 {
-  background-attachment: fixed;
   background-size: cover;
   min-height: 100vh;
   overflow: auto;
@@ -7109,6 +7115,13 @@ div.alert {
     background-attachment: scroll;
   }
 }
+#home-gradient {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
 .dynamic-color {
   color: var(--dynamic-color);
 }
@@ -7137,19 +7150,9 @@ div.alert {
   background-color: transparent;
   border: none;
 }
-
 .home-nav li {
   list-style: none;
 }
-
-.inverse {
-  color: white;
-}
-
-.inverse a {
-  color: white;
-}
-
 .home-nav a {
   color: var(--dynamic-color);
   font-size: 2rem;
@@ -7157,13 +7160,12 @@ div.alert {
   padding: calc(3rem + 2vw) 0;
   text-transform: capitalize;
 }
+.home-nav a:focus, .home-nav a:hover {
+  font-weight: 600;
+}
 
 svg g {
   fill: var(--dynamic-color);
-}
-
-.home-nav a:focus, .home-nav a:hover {
-  font-weight: 600;
 }
 
 .home-section {
@@ -7243,7 +7245,7 @@ th, td {
 }
 
 td {
-  color: #1C4D65;
+  color: #03202c;
 }
 
 .test-date {
