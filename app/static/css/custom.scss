@@ -26,7 +26,6 @@ $title-font: 'Montserrat Alternates', 'Helvetica', sans-serif;
 
 html {
   height: 100%;
-  scroll-padding-top: 60px;
 }
 
 body {
@@ -222,7 +221,7 @@ a {
   display: inline-block;
   text-decoration: none;
   color: darken($secondary-color, 15%);
-  transition: all 0.2s ease-in-out;
+  //transition: all 0.2s ease-in-out;
 }
 
 a:hover {
@@ -418,7 +417,7 @@ div.alert {
 #menu-btn {
   display: flex;
   justify-content: flex-end;
-  margin: 17px 0 17px auto;
+  margin: 3rem 0 3rem auto;
   color: white;
   text-decoration: none;
 }
@@ -511,14 +510,6 @@ div.alert {
   }
 }
 
-#home-gradient {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  
-}
-
 .dynamic-color {
   color: var(--dynamic-color);
 }
@@ -564,14 +555,14 @@ div.alert {
   }
 }
 
-svg g {
+g path {
   fill: var(--dynamic-color);
 }
 
 .home-section {
   min-height: 100vh;
   overflow: auto;
-  padding-top: calc(3rem + 2vw);
+  padding-top: calc(5rem + 2vw);
 }
 
 .home-section.end {

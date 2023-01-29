@@ -6260,7 +6260,7 @@ progress {
 }
 @media (min-width: 992px) {
   .modal-lg,
-.modal-xl {
+  .modal-xl {
     --bs-modal-width: 800px;
   }
 }
@@ -6301,7 +6301,7 @@ progress {
     border-radius: 0;
   }
   .modal-fullscreen-sm-down .modal-header,
-.modal-fullscreen-sm-down .modal-footer {
+  .modal-fullscreen-sm-down .modal-footer {
     border-radius: 0;
   }
   .modal-fullscreen-sm-down .modal-body {
@@ -6321,7 +6321,7 @@ progress {
     border-radius: 0;
   }
   .modal-fullscreen-md-down .modal-header,
-.modal-fullscreen-md-down .modal-footer {
+  .modal-fullscreen-md-down .modal-footer {
     border-radius: 0;
   }
   .modal-fullscreen-md-down .modal-body {
@@ -6341,7 +6341,7 @@ progress {
     border-radius: 0;
   }
   .modal-fullscreen-lg-down .modal-header,
-.modal-fullscreen-lg-down .modal-footer {
+  .modal-fullscreen-lg-down .modal-footer {
     border-radius: 0;
   }
   .modal-fullscreen-lg-down .modal-body {
@@ -6361,7 +6361,7 @@ progress {
     border-radius: 0;
   }
   .modal-fullscreen-xl-down .modal-header,
-.modal-fullscreen-xl-down .modal-footer {
+  .modal-fullscreen-xl-down .modal-footer {
     border-radius: 0;
   }
   .modal-fullscreen-xl-down .modal-body {
@@ -6381,7 +6381,7 @@ progress {
     border-radius: 0;
   }
   .modal-fullscreen-xxl-down .modal-header,
-.modal-fullscreen-xxl-down .modal-footer {
+  .modal-fullscreen-xxl-down .modal-footer {
     border-radius: 0;
   }
   .modal-fullscreen-xxl-down .modal-body {
@@ -6660,7 +6660,6 @@ progress {
 
 html {
   height: 100%;
-  scroll-padding-top: 60px;
 }
 
 body {
@@ -6839,7 +6838,6 @@ a {
   display: inline-block;
   text-decoration: none;
   color: #2aa5a0;
-  transition: all 0.2s ease-in-out;
 }
 
 a:hover {
@@ -7028,7 +7026,7 @@ div.alert {
 #menu-btn {
   display: flex;
   justify-content: flex-end;
-  margin: 17px 0 17px auto;
+  margin: 3rem 0 3rem auto;
   color: white;
   text-decoration: none;
 }
@@ -7115,13 +7113,6 @@ div.alert {
     background-attachment: scroll;
   }
 }
-#home-gradient {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-}
-
 .dynamic-color {
   color: var(--dynamic-color);
 }
@@ -7164,14 +7155,14 @@ div.alert {
   font-weight: 600;
 }
 
-svg g {
+g path {
   fill: var(--dynamic-color);
 }
 
 .home-section {
   min-height: 100vh;
   overflow: auto;
-  padding-top: calc(3rem + 2vw);
+  padding-top: calc(5rem + 2vw);
 }
 
 .home-section.end {

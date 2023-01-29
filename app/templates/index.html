@@ -13,7 +13,6 @@
     <source src="{{ url_for('static', filename='media/lay-z-owl-pexels2.mp4')}}" type="video/mp4">
   </video>
   <canvas id="my-canvas" style="display:none" width="250" height="150"></canvas>
-  <!-- <div id="home-gradient"></div> -->
   <div id="home-1" class="inverse text-center">
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
@@ -40,7 +39,9 @@
 
     <div class="row justify-content-center">
       <div class="col-11 col-sm-12">
+        
         {% include '_logo.svg' %}
+
         <h1 id="home-title" class="dynamic-color">Websites that delight.<br>
           By coders who care.</h1>
         <!-- <h1 id="home-tagline">Make it yours.</h1> -->
