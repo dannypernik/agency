@@ -8,12 +8,13 @@
 
 {% block container %}
 
-  <video playsinline autoplay muted poster="{{ url_for('static', filename='img/bg-img.jpg') }}" id="bg-vid">
-    <source src="{{ url_for('static', filename='media/lay-z-owl-pexels2.webm')}}" type="video/webm">
-    <source src="{{ url_for('static', filename='media/lay-z-owl-pexels2.mp4')}}" type="video/mp4">
+  <video muted autoplay playsinline poster="{{ url_for('static', filename='img/bg-img.jpg') }}" id="bg-vid">
+    <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.webm')}}" type="video/webm">
+    <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.mp4') }}" type="video/mp4">
   </video>
   <canvas id="my-canvas" style="display:none" width="250" height="150"></canvas>
-  <div id="home-1" class="inverse text-center">
+
+  <div id="home-1" class="home-section text-center">
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         {% for category, message in messages %}
@@ -28,7 +29,12 @@
     <nav class="row justify-content-center g-0">
       <div class="col-11 col-md-10">
         <div class="row justify-content-center justify-content-md-end">
-          <div class="home-nav col col-md-7 col-lg-6 col-xl-5">
+          <div class="col-1">
+            <div id="vid-toggle">
+              <div id="pause-play"></div>
+            </div>
+          </div>
+          <div class="home-nav col offset-1 offset-md-4 offset-lg-5 offset-xl-6 col-md-7 col-lg-6 col-xl-5">
             <div><a href="#home" data-text="home">home</a></div>
             <div><a href="{{ url_for('about') }}" data-text="about">about</a></div>
             <div><a href="#contact" data-text="contact">contact</a></div>
@@ -38,28 +44,25 @@
     </nav>
 
     <div class="row justify-content-center">
-      <div class="col-11 col-sm-12">
-        
-        {% include '_logo.svg' %}
+      <div class="col-12">
 
-        <h1 id="home-title" class="dynamic-color">Websites that delight.<br>
-          By coders who care.</h1>
-        <!-- <h1 id="home-tagline">Make it yours.</h1> -->
+        <h1 id="home-title" class="dynamic-color">
+          Websites that delight.<br>
+          Apps that attract.
+        </h1>
+        
+        {% include '_logo-main.svg' %}
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="col col-sm-11">
-        <a onclick="playPause('bg-vid')" class="cta btn">
-          Call to action
-        </a>
-
         <div class="home-next">
           <a href="#home-2">
-            <h4 class="white">
+            <h4 class="dynamic-color">
               Learn more
             </h4>
             <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi
-                bi-chevron-down white" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                bi-chevron-down dynamic-color" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
             </svg>
           </a>
@@ -71,30 +74,37 @@
   {% include "_header-index.html" %}
 
   <div id="home-2" class="home-section">
-    <div class="row justify-content-center">
-      <div class="col-11 col-sm-10 col-lg-8">
-        <h1 class="mb-4">Section 2 title</h1>
-        <div class="text-center">
-          <a class="cta btn mb-2" href="#contact">
-            Get in touch
-          </a>
+    <div class="row">
+      <div class="col-10 col-md-8 offset-1">
+        <h1 class="mb-4">We feel your pain</h1>
+        <p class="h3">
+          ...because we've been in your position: holding a vision but needing help to realize it.
+          We've started businesses, ridden the
+          <a href="https://tim.blog/2008/10/03/harnessing-entrepreneurial-manic-depression-making-the-rollercoaster-work-for-you/"
+            class="d-inline" target="_blank">
+            manic depressive roller-coaster of entrepreneurship</a>,
+          and experienced the joys and frustrations of hiring tech freelancers and agencies.
+        </p>
+        <p class="h3">
+          We know how important it is to the success of your business that each project flows
+          without friction. You will have direct communication with the development team,
+          full transparency with regards to cost and timeline, and our commitment to giving you
+          honest answers &ndash; even when it's not what you want to hear.
+        </p>
+        <div class="row justify-content-end">
+          <div class="text-center text-sm-end">
+            <a class="cta btn mb-2" href="#contact">
+              Get in touch
+            </a>
+          </div>
         </div>
-        <div class="home-next">
-          <a href="#home-3">
-            <h4>
-              Section 3
-            </h4>
-            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-chevron-down"
-                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-            </svg>
-          </a>
-        </div>
+        
+        
       </div>
     </div>
   </div>
 
-  <div id="home-3" class="home-section inverse">
+  <div id="home-3" class="home-section">
     <div class="row justify-content-center">
       <div class="col-11 col-sm-10 col-lg-8">
         <h1 class="mb-4">Section 3 title</h1>
@@ -147,6 +157,11 @@
         video.play(); 
       else 
         video.pause();
+    }
+
+    document.querySelector('#vid-toggle').onclick = function() {
+      playPause('bg-vid');
+      document.getElementById('pause-play').classList.toggle('paused');
     }
   </script>
 {% endblock end_scripts %}

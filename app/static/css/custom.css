@@ -82,7 +82,7 @@
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
-  --bs-body-line-height: 1.5;
+  --bs-body-line-height: 1.4;
   --bs-body-color: #212529;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
@@ -669,7 +669,7 @@ progress {
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
-  --bs-body-line-height: 1.5;
+  --bs-body-line-height: 1.4;
   --bs-body-color: #212529;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
@@ -2229,7 +2229,7 @@ progress {
 }
 
 .lh-base {
-  line-height: 1.5 !important;
+  line-height: 1.4 !important;
 }
 
 .lh-lg {
@@ -5718,7 +5718,7 @@ progress {
   --bs-btn-font-family: ;
   --bs-btn-font-size: 1rem;
   --bs-btn-font-weight: 400;
-  --bs-btn-line-height: 1.5;
+  --bs-btn-line-height: 1.4;
   --bs-btn-color: #212529;
   --bs-btn-bg: transparent;
   --bs-btn-border-width: var(--bs-border-width);
@@ -6113,7 +6113,7 @@ progress {
   --bs-modal-header-padding: 2rem 2rem;
   --bs-modal-header-border-color: var(--bs-border-color);
   --bs-modal-header-border-width: var(--bs-border-width);
-  --bs-modal-title-line-height: 1.5;
+  --bs-modal-title-line-height: 1.4;
   --bs-modal-footer-gap: 0.5rem;
   --bs-modal-footer-bg: ;
   --bs-modal-footer-border-color: var(--bs-border-color);
@@ -6660,13 +6660,16 @@ progress {
 
 html {
   height: 100%;
+  scroll-padding-top: 11.5rem;
 }
 
 body {
   height: 100%;
   font-family: "Montserrat", "Helvetica", sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1.4;
   color: #03202c;
-  font-size: 1.6rem;
   display: flex;
   flex-direction: column;
   -ms-overflow-style: none;
@@ -6676,20 +6679,19 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-p {
+p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin-bottom: 2rem;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  margin-bottom: 1rem;
-  font-weight: 400;
-  line-height: 1.2;
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.4;
 }
 
 h1, .h1 {
-  font-family: "Montserrat Alternates", "Helvetica", sans-serif;
+  font-family: "Montserrat", "Helvetica", sans-serif;
   font-size: calc(2.3rem + 1vw);
-  margin-bottom: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
 }
 
 h2, .h2 {
@@ -6726,10 +6728,15 @@ input, textarea {
   width: 100%;
   outline: none;
   color: #03202c;
+  background-color: transparent;
 }
 
 input:focus, textarea:focus {
   border-bottom: 1px solid #03202c;
+}
+
+::placeholder {
+  color: #777;
 }
 
 input[type=checkbox] {
@@ -6837,18 +6844,18 @@ select {
 a {
   display: inline-block;
   text-decoration: none;
-  color: #2aa5a0;
+  color: #1a8090;
 }
 
 a:hover {
-  color: #4ad1cc;
+  color: #26bad1;
 }
 
 a.btn:hover {
   text-decoration: none;
 }
 
-a:before {
+.home-nav a:before {
   display: block;
   font-weight: 600;
   content: attr(data-text);
@@ -6861,8 +6868,8 @@ button, .btn, input[type=submit] {
   display: block;
   margin: 0 auto 2rem;
   padding: 1rem 2rem;
-  background-color: #03202c;
-  border: 2px solid #03202c;
+  background-color: #26bad1;
+  border: none;
   color: white;
   transition: 0.3s;
   font-size: 1.7rem;
@@ -6870,28 +6877,33 @@ button, .btn, input[type=submit] {
 }
 
 button:hover, .btn:hover, input[type=submit]:hover, .menu-link:hover {
-  background-color: #4ad1cc;
-  border-color: #4ad1cc;
-  color: white;
+  background-color: #1e94a6;
+  border-color: #1e94a6;
 }
 
 .inverse {
   background-color: #03202c;
   color: white;
 }
-.inverse button, .inverse .btn, .inverse input[type=submit] {
-  background-color: #4ad1cc;
-  border-color: #4ad1cc;
-}
-.inverse button:hover, .inverse .btn:hover, .inverse input[type=submit]:hover {
-  background-color: #2aa5a0;
-  border-color: #2aa5a0;
-}
 .inverse a {
   color: white;
 }
-.inverse a:hover, .inverse a:hover h4, .inverse a:hover .h4 {
+.inverse a.d-inline {
+  color: #26bad1;
+}
+.inverse a.d-inline:hover {
+  text-decoration: underline;
+}
+.inverse .home-nav a:hover, .inverse .home-next a:hover h4, .inverse .home-next a:hover .h4, .inverse #menu-btn:hover {
   font-weight: 600;
+}
+.inverse input, .inverse textarea {
+  color: white;
+  border-color: white;
+}
+.inverse ::placeholder {
+  color: white;
+  opacity: 0.5;
 }
 
 input[type=submit] {
@@ -6900,10 +6912,6 @@ input[type=submit] {
 
 a.btn {
   display: inline-block;
-}
-
-.white {
-  color: white;
 }
 
 .btn.clr {
@@ -6936,7 +6944,7 @@ a.btn {
 }
 
 .btn.cta {
-  margin-top: calc(2rem + 1vw);
+  margin-top: calc(1rem + 1vw);
   font-size: calc(2rem + 0.1vw);
 }
 
@@ -6991,7 +6999,7 @@ div.alert {
 }
 
 .page-title {
-  font-family: "Montserrat Alternates", "Helvetica", sans-serif;
+  font-family: "Montserrat", "Helvetica", sans-serif;
   font-size: calc(2.25rem + 1vw);
 }
 
@@ -7013,14 +7021,144 @@ div.alert {
   margin-top: 11rem;
 }
 
-#nav-img {
-  height: 36px;
-  margin: 12px 0;
-  max-width: 100%;
+.nav-gap {
+  height: 60px;
+  width: 100%;
 }
 
-#menu-title {
-  padding-top: 2px;
+#free-trial {
+  overflow: unset;
+}
+
+#bg-vid {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#vid-toggle {
+  border: 2px solid var(--dynamic-color);
+  width: fit-content;
+  padding: 6px;
+  border-radius: 8px;
+}
+#vid-toggle:hover {
+  border-color: #26bad1;
+  cursor: pointer;
+}
+#vid-toggle:hover #pause-play {
+  border-color: transparent transparent transparent #26bad1;
+}
+
+#pause-play {
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  width: 0;
+  height: 12px;
+  border-color: transparent transparent transparent var(--dynamic-color);
+  border-style: double;
+  border-width: 0px 0 0px 10px;
+}
+#pause-play.paused {
+  border-style: solid;
+  border-width: 6px 0 6px 10px;
+}
+
+#home-1 {
+  position: relative;
+  background: linear-gradient(180deg, transparent 50%, #03202c);
+  background-size: cover;
+  overflow: auto;
+}
+
+#home-logo {
+  position: relative;
+  display: block;
+  margin: 3rem auto;
+  height: calc(12rem + 3vw);
+}
+
+#home-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(1.8rem + 3vw);
+  font-weight: 700;
+  margin-top: 5rem;
+}
+
+#home-tagline {
+  margin-top: 2rem;
+  font-size: calc(1.75rem + 1vw);
+  font-weight: 700;
+}
+
+.home-nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  border: none;
+}
+.home-nav li {
+  list-style: none;
+}
+.home-nav a {
+  color: var(--dynamic-color);
+  font-size: 2rem;
+  text-decoration: none;
+  padding-bottom: calc(2rem + 2vw);
+  text-transform: capitalize;
+}
+.home-nav a:focus, .home-nav a:hover {
+  font-weight: 600;
+}
+
+g path {
+  fill: var(--dynamic-color);
+}
+
+.home-section {
+  min-height: 100vh;
+  overflow: auto;
+  padding-top: calc(3rem + 2vw);
+}
+
+.home-section.end {
+  min-height: calc(100vh - 30rem);
+}
+
+.home-next {
+  display: table;
+  margin: calc(2rem + 1vw) auto 3rem;
+  text-align: center;
+}
+.home-next a {
+  color: #26bad1;
+}
+
+.bi-chevron-down {
+  font-size: 1rem;
+}
+
+.sticky-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #03202c;
+  z-index: 100;
+}
+.sticky-header.transparent {
+  padding-top: 2vw;
+  pointer-events: none;
+}
+
+#nav-img {
+  height: 3.5rem;
+  margin: 2.5rem 0;
+  max-width: 100%;
+  pointer-events: all;
 }
 
 #menu-btn {
@@ -7029,6 +7167,9 @@ div.alert {
   margin: 3rem 0 3rem auto;
   color: white;
   text-decoration: none;
+  cursor: pointer;
+  width: fit-content;
+  pointer-events: all;
 }
 
 #menu-btn:hover, #menu-btn:focus {
@@ -7036,8 +7177,9 @@ div.alert {
 }
 
 #menu-icon {
-  height: 26px;
+  height: 25px;
   padding-left: 15px;
+  margin-top: 1px;
 }
 
 .drawer__back {
@@ -7063,201 +7205,16 @@ div.alert {
   cursor: pointer;
 }
 
-.sticky-header {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  background-color: #03202c;
-  z-index: 100;
+.dynamic-color {
+  color: var(--dynamic-color);
 }
 
 .transparent {
   background-color: transparent;
 }
 
-.nav-gap {
-  height: 60px;
-  width: 100%;
-}
-
-#free-trial {
-  overflow: unset;
-}
-
-#bg-vid {
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-#home-1 {
-  position: relative;
-  background: linear-gradient(180deg, transparent 50%, #03202c);
-}
-
-#home-3 {
-  background: linear-gradient(180deg, #03202c 0%, transparent 50%, #03202c), url(../img/te-lun-ou-yang-TFZlTFOWReA-unsplash.jpg) center bottom no-repeat;
-}
-
-#home-1, #home-3 {
-  background-size: cover;
-  min-height: 100vh;
-  overflow: auto;
-}
-
-@media screen and (max-width: 575px) {
-  #home-1, #home-3 {
-    background-attachment: scroll;
-  }
-}
-.dynamic-color {
-  color: var(--dynamic-color);
-}
-
-#home-logo {
-  position: relative;
-  display: block;
-  margin: 3rem auto;
-  height: calc(80px + 3vw);
-}
-
-#home-title {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-size: calc(1.8rem + 3vw);
-}
-
-#home-tagline {
-  margin-top: 2rem;
-  font-size: calc(1.75rem + 1vw);
-  font-weight: 700;
-}
-
-.home-nav {
-  display: flex;
-  justify-content: space-between;
-  background-color: transparent;
-  border: none;
-}
-.home-nav li {
-  list-style: none;
-}
-.home-nav a {
-  color: var(--dynamic-color);
-  font-size: 2rem;
-  text-decoration: none;
-  padding: calc(3rem + 2vw) 0;
-  text-transform: capitalize;
-}
-.home-nav a:focus, .home-nav a:hover {
-  font-weight: 600;
-}
-
-g path {
-  fill: var(--dynamic-color);
-}
-
-.home-section {
-  min-height: 100vh;
-  overflow: auto;
-  padding-top: calc(5rem + 2vw);
-}
-
-.home-section.end {
-  min-height: calc(100vh - 30rem);
-}
-
-.home-next {
-  display: table;
-  margin: calc(2rem + 1vw) auto 3rem;
-  text-align: center;
-}
-.home-next a {
-  color: #4ad1cc;
-}
-
-.bi-chevron-down {
-  font-size: 1rem;
-}
-
-.usp {
-  margin-top: calc(2rem + 2vw);
-}
-
-.usp-icon {
-  width: 7rem;
-  height: 7rem;
-  fill: #4ad1cc;
-  margin-bottom: 2rem;
-}
-
-.usp-title {
-  margin-bottom: 1.5rem;
-}
-
-.usp-text {
-  color: #888;
-}
-
-.profile-pic {
-  display: block;
-  border-radius: 100%;
-  margin: 0 auto 2rem;
-  max-height: 155px;
-}
-
-.review-img {
-  height: 100px;
-  margin-bottom: 2rem;
-}
-
-.student-list, .user-list {
-  transition: height 0.2s ease-out;
-  overflow: hidden;
-}
-
-.table-container {
-  overflow: overlay;
-  border: 1px solid #58adc7;
-  border-radius: 5px;
-}
-
-.table > :not(caption) > * > * {
-  padding: 1rem;
-}
-
-thead {
-  background-color: #58adc7;
+.white {
   color: white;
-}
-
-th, td {
-  white-space: nowrap;
-  width: 1%;
-}
-
-td {
-  color: #03202c;
-}
-
-.test-date {
-  width: 177px;
-}
-
-.hidden-form, #parent-info, #student-info, #inactive-students {
-  height: 0px;
-  transition: height 0.5s ease-out;
-  overflow: hidden;
-}
-
-.slide-toggle {
-  cursor: pointer;
-}
-
-.w-fit {
-  width: fit-content;
 }
 
 /*# sourceMappingURL=custom.css.map */

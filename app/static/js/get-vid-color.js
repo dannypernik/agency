@@ -5,14 +5,18 @@
 // var current_rgb = document.getElementById('current_rgb');
 var my_video = document.getElementById('bg-vid');
 var my_canvas = document.getElementById('my-canvas');
-var my_canvas_context = my_canvas.getContext('2d');
+var my_canvas_context = my_canvas.getContext('2d', { willReadFrequently: true });
 var rgb_min = [20, 72, 92]
 var rgb_brighten = [20, 20, 20]
 
 
 var update_bg = function(){
   // If the video isn't playing, don't loop
-  if(my_video.paused || my_video.ended){
+  if(my_video.ended){
+    document.getElementById('pause-play').classList.add('paused');
+    return false; 
+  }
+  else if(my_video.paused) {
     return false;
   }
 

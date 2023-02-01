@@ -1,16 +1,16 @@
 <div class="row {% block header_class %}{% endblock header_class %} sticky-header justify-content-center">
   <div class="col-10">
-    <div class="row">
+    <div class="row g-0">
       <div class="col-9">
         {% block logo_link %}
-          <a href="{{ url_for('index', _anchor='#contact') }}">
+          <a href="{{ url_for('index', _anchor='#home') }}">
         {% endblock logo_link %}
-          <img id="nav-img" src="{{ url_for('static', filename='img/logo.svg') }}">
+          <img id="nav-img" src="{{ url_for('static', filename='img/logo-header.svg') }}">
         </a>
       </div>
       <div class="col-3">
         <a id="menu-btn" data-drawer-trigger aria-controls="site-menu" aria-expanded="false">
-          <div id="menu-title" class="d-none d-sm-block">
+          <div class="d-none d-sm-block">
             {% if current_user.is_authenticated %}
               {{ current_user.first_name }} {{ current_user.last_name }}
             {% else %}
