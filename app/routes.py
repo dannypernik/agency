@@ -286,9 +286,9 @@ def download_file (filename):
     path = os.path.join(app.root_path, 'static/files/')
     return send_from_directory(path, filename, as_attachment=False)
 
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'), 'img/favicons/favicon.ico')
+# @app.route('/favicon.ico')
+# def favicon():
+#     return send_from_directory(os.path.join(app.root_path, 'static'), 'img/favicons/favicon.ico')
 
 @app.route('/manifest.webmanifest')
 def webmanifest():
