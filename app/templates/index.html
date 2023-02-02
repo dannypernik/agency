@@ -7,14 +7,13 @@
 {% endblock body_class %}
 
 {% block container %}
-
   <video muted autoplay playsinline poster="{{ url_for('static', filename='img/bg-img.jpg') }}" id="bg-vid">
     <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.webm')}}" type="video/webm">
     <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.mp4') }}" type="video/mp4">
   </video>
   <canvas id="my-canvas" style="display:none" width="250" height="150"></canvas>
 
-  <div id="home-1" class="home-section text-center">
+  <div id="welcome" class="home-section text-center">
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         {% for category, message in messages %}
@@ -76,7 +75,7 @@
   <div id="home-2" class="home-section">
     <div class="row">
       <div class="col-10 col-md-8 offset-1">
-        <h1 class="mb-4">We feel your pain</h1>
+        <h1>We feel your pain</h1>
         <p class="h3">
           ...because we've been in your position: holding a vision but needing help to realize it.
           We've started businesses, ridden the
@@ -91,32 +90,87 @@
           full transparency with regards to cost and timeline, and our commitment to giving you
           honest answers &ndash; even when it's not what you want to hear.
         </p>
-        <div class="row justify-content-end">
-          <div class="text-center text-sm-end">
-            <a class="cta btn mb-2" href="#contact">
-              Get in touch
-            </a>
-          </div>
+
+        <div class="text-center">
+          <a class="cta btn" href="#contact">
+            Get in touch
+          </a>
         </div>
         
-        
+        <div class="home-next">
+          <a href="#home-3">
+            <h4>
+              <span class="me-2">Our approach</span>
+              <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi
+                bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            </svg>
+            </h4>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
   <div id="home-3" class="home-section">
     <div class="row justify-content-center">
-      <div class="col-11 col-sm-10 col-lg-8">
-        <h1 class="mb-4">Section 3 title</h1>
+      <div class="col-10 offset-1 col-md-8 offset-md-2">
+        <h1>Details matter.</h1>
+        <p class="h3">
+          One crucial aspect of successful creation is ensuring that your vision is fully
+          understood and shared by collaborators. Many agencies will praise your idea
+          regardless of its merits or their comprehension. We will not do you that disservice.
+        </p>
+        <p class="h3">
+          Instead, we challenge our clients. We ask uncomfortable questions and pose alternatives.
+          We unearth uncertainties so that they can be clarified. We seek the unspoken assumptions
+          upon which the value proposition is built, so that you know whether to proceed or to
+          pivot. And then we build whatever you decide to build.
+        </p>
+        <p class="h3 mb-5">
+          We do these things because we care deeply for the success of the ventures we choose
+          to support.
+        </p>
         <div class="home-next">
-          <a href="#contact">
+          <a href="#home-4">
             <h4>
-              Have a question?
-            </h4>
-            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-chevron-down"
+              <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-chevron-down"
                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
             </svg>
+            <span class="ms-2">Things we can build together</span>
+            </h4>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="home-4" class="home-section">
+    <div class="row justify-content-start">
+      <div class="col-10 col-md-8 offset-1">
+        <h1>Our capabilities</h1>
+        <p class="h3">
+          We build fast and well-maintained systems to address all of your business needs.
+          Some of the technologies we use include Python, Django, Flask, PostgresSQL, and MongoDB.
+          We use technologies like FastAPI to build efficient APIs. We will deploy your site
+          or app in AWS, GCP or any other cloud service provider of your choice.
+        </p>
+        <p class="h3 mb-5">
+          We are comfortable with various AI tools, such as recommendation engines and chat bots.
+          Our broad range of tools allows us to offer complete, performant solutions to our
+          clients.
+        </p>
+
+        <div class="home-next">
+          <a href="#contact">
+            <h4>
+              <span class="me-2">Let's connect</span>
+              <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi
+                bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            </svg>
+            </h4>
           </a>
         </div>
       </div>
@@ -126,7 +180,7 @@
   <div id="contact" class="home-section end">
     <div class="row justify-content-center">
       <div class="col-11 col-md-8">
-        <h1 class="mb-4">Get in touch</h1>
+        <h1 class="mb-4">Send us a message</h1>
 
         <form id="inquiry-form" action="" method="post">
           {{ form.hidden_tag() }}
