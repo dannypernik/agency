@@ -206,9 +206,11 @@
   <script src="{{ url_for('static', filename='js/get-vid-color.js') }}"></script>
 
   <script>
+    var video = document.getElementById('bg-vid')
+
     video.play();
+    
     function playPause (id) {
-      var video = document.getElementById('bg-vid')
       if (video.paused) 
         video.play(); 
       else 
