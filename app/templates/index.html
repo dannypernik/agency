@@ -204,10 +204,12 @@
   <script>
     var video = document.getElementById('bg-vid');
 
-    video.catch((error) => {
-      if (error.name === "NotAllowedError") {
-        video.classList.toggle('d-none');
-      }
+    video.addEventListener('suspend', () => {
+      video.classList.add('d-none');
+    });
+
+    video.addEventListener('play', () => {
+      video.classList.remove('d-none');
     });
 
     function playPause (id) {
