@@ -26,7 +26,13 @@ $font-family: 'Montserrat', 'Helvetica', sans-serif;
 
 html {
   height: 100%;
-  scroll-padding-top: 11.5rem;
+  scroll-padding-top: 7rem;
+}
+
+@media (min-width: 576px) {
+  html {
+    scroll-padding-top: 11.5rem;
+  }
 }
 
 body {
@@ -36,6 +42,7 @@ body {
   font-size: 1.8rem;
   line-height: 1.4;
   color: $primary-color;
+  background-color: $primary-color;
   display: flex;
   flex-direction:  column;
   -ms-overflow-style: none;
