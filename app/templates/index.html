@@ -202,7 +202,15 @@
   <script src="{{ url_for('static', filename='js/get-vid-color.js') }}"></script>
 
   <script>
+    var body = document.getElementById('body');
     var video = document.getElementById('bg-vid');
+    const action = ( window.ontouchstart === null ) ? 'touchstart' : 'click';
+    
+    body.addEventListener( action, (e) => {
+      if (!video.playing) {
+        video.play();
+      };
+    });
 
     function playPause (id) {
       if (video.paused) 
