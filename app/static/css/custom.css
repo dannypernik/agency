@@ -6660,9 +6660,14 @@ progress {
 
 html {
   height: 100%;
-  scroll-padding-top: 11.5rem;
+  scroll-padding-top: 7rem;
 }
 
+@media (min-width: 576px) {
+  html {
+    scroll-padding-top: 11.5rem;
+  }
+}
 body {
   height: 100%;
   font-family: "Montserrat", "Helvetica", sans-serif;
@@ -6670,6 +6675,7 @@ body {
   font-size: 1.8rem;
   line-height: 1.4;
   color: #03202c;
+  background-color: #03202c;
   display: flex;
   flex-direction: column;
   -ms-overflow-style: none;
