@@ -8,7 +8,6 @@
 
 {% block container %}
   <video id="bg-vid" muted autoPlay playsInline poster="{{ url_for('static', filename='img/bg-img.jpg') }}">
-    <source src="https://drive.google.com/file/d/10ZhZzyYPc2f597Iw0xGOZpk8ZG3pxHi8/view?usp=share_link" type="video/mp4">
     <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.webm')}}" type="video/webm">
     <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.mp4') }}" type="video/mp4">
   </video>
@@ -79,10 +78,7 @@
         <h1>We feel your pain</h1>
         <p class="h3">
           ...because we've been in your position: holding a vision but needing help to realize it.
-          We've started businesses, ridden the
-          <a href="https://tim.blog/2008/10/03/harnessing-entrepreneurial-manic-depression-making-the-rollercoaster-work-for-you/"
-            class="d-inline" target="_blank">
-            manic depressive roller-coaster of entrepreneurship</a>,
+          We've started businesses, ridden the emotional roller-coaster of entrepreneurship,
           and experienced the joys and frustrations of hiring tech freelancers and agencies.
         </p>
         <p class="h3">
@@ -208,8 +204,12 @@
   <script>
     var video = document.getElementById('bg-vid');
 
-    video.play();
-    
+    video.catch((error) => {
+      if (error.name === "NotAllowedError") {
+        video.classList.toggle('d-none');
+      }
+    });
+
     function playPause (id) {
       if (video.paused) 
         video.play(); 
