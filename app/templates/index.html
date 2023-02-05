@@ -7,7 +7,7 @@
 {% endblock body_class %}
 
 {% block container %}
-  <video id="bg-vid" muted autoPlay playsInline poster="{{ url_for('static', filename='img/bg-img.jpg') }}">
+  <video id="bg-vid" class="paused" muted autoPlay playsInline poster="{{ url_for('static', filename='img/bg-img.jpg') }}">
     <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.webm')}}" type="video/webm">
     <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.mp4') }}" type="video/mp4">
   </video>
@@ -206,11 +206,21 @@
     var video = document.getElementById('bg-vid');
     const action = ( window.ontouchstart === null ) ? 'touchstart' : 'click';
     
-    body.addEventListener( action, (e) => {
-      if (!video.playing) {
-        video.play();
-      };
-    });
+    let startPlayPromise = video.play();
+
+    if (startPlayPromise !== undefined) {
+      startPlayPromise
+        .then(() => {
+          video.classList.remove('paused');
+        })
+        .catch((error) => {
+          if (error.name === "NotAllowedError") {
+            video.classList.add('d-none');
+          } else {
+            console.log("Unable to play video, 'NotAllowedError' did not fire.")
+          }
+        });
+    };
 
     function playPause (id) {
       if (video.paused) 
