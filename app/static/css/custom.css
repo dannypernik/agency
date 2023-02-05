@@ -7035,6 +7035,7 @@ div.alert {
   object-fit: cover;
   width: 100vw;
   height: 100vh;
+  min-height: 70rem;
   position: absolute;
   top: 0;
   left: 0;
