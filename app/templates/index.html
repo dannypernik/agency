@@ -202,25 +202,8 @@
   <script src="{{ url_for('static', filename='js/get-vid-color.js') }}"></script>
 
   <script>
-    var body = document.getElementById('body');
-    var video = document.getElementById('bg-vid');
-    const action = ( window.ontouchstart === null ) ? 'touchstart' : 'click';
-    
+    let video = document.getElementById('bg-vid');
     let startPlayPromise = video.play();
-
-    if (startPlayPromise !== undefined) {
-      startPlayPromise
-        .then(() => {
-          video.classList.remove('paused');
-        })
-        .catch((error) => {
-          if (error.name === "NotAllowedError") {
-            video.classList.add('d-none');
-          } else {
-            console.log("Unable to play video, 'NotAllowedError' did not fire.")
-          }
-        });
-    };
 
     function playPause (id) {
       if (video.paused) 
