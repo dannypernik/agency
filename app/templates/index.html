@@ -7,7 +7,7 @@
 {% endblock body_class %}
 
 {% block container %}
-  <video id="bg-vid" class="paused" muted autoPlay playsInline poster="{{ url_for('static', filename='img/bg-img.jpg') }}">
+  <video id="bg-vid" muted autoPlay playsInline poster="{{ url_for('static', filename='img/bg-img.jpg') }}">
     <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.webm')}}" type="video/webm">
     <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.mp4') }}" type="video/mp4">
   </video>
@@ -204,6 +204,15 @@
   <script>
     let video = document.getElementById('bg-vid');
     let startPlayPromise = video.play();
+
+    if (startPlayPromise !== undefined) {
+      startPlayPromise
+        .then()
+        .catch((error) => {
+          video.classList.add('d-none');
+          document.getElementById('vid-toggle').classList.add('d-none');
+      });
+    };
 
     function playPause (id) {
       if (video.paused) 
