@@ -7088,11 +7088,17 @@ div.alert {
 
 #home-title {
   font-family: "Montserrat", sans-serif;
-  font-size: calc(1.8rem + 3vw);
+  font-size: 5.5rem;
   font-weight: 700;
-  margin-top: 5rem;
+  margin: 4rem 0;
 }
 
+@media (min-width: 576px) {
+  #home-title {
+    font-size: calc(1.8rem + 3vw);
+    margin: 5rem 0;
+  }
+}
 #home-tagline {
   margin-top: 2rem;
   font-size: calc(1.75rem + 1vw);
