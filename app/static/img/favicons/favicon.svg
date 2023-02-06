@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="789px" height="788px" viewBox="0 0 789 788" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
-    <title>favicon</title>
-    <desc>Created with Sketch.</desc>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            path { fill-opacity: 0; }
+        }
+    </style>
     <defs>
         <path d="M368.50563,748.070855 C550.783788,748.070855 612.664647,701.74164 689.517904,594.687536 C702.919457,576.019605 755.430136,461.450266 755.430136,437.413281 C755.430136,347.428877 700.162577,275.718849 700.169563,175.65073 C700.171379,149.633609 498.577876,0.438906825 382.145833,0.438906825 C175.867614,0.438906825 0.240631036,178.328241 0.240631036,384.923819 C0.240631036,591.519398 162.227412,748.070855 368.50563,748.070855 Z" id="path-1"></path>
     </defs>
