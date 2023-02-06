@@ -2,7 +2,7 @@
 <svg width="789px" height="788px" viewBox="0 0 789 788" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <style>
         @media (prefers-color-scheme: dark) {
-            path { fill-opacity: 0; }
+            ellipse { fill-opacity: 0; }
         }
     </style>
     <defs>
