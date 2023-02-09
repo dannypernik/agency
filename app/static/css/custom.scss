@@ -3,7 +3,7 @@ $line-height-base: 1.4;
 $lead-font-size: calc(2rem + 0.1vw);
 $lead-font-weight: inherit;
 $spacer: 2rem;
-$primary-color: #03202c;
+$primary-color: rgb(3,32,44);
 $secondary-color: #26bad1;//4ad1cc;//58bba4;
 $highlight-color: #d35137;//e97435;;
 $grey: #ddd;
@@ -575,9 +575,10 @@ g path {
   background-color: $primary-color;
   z-index: 100;
 
-  &.transparent {
+  &.translucent {
     padding-top: 2vw;
-    pointer-events: none; 
+    pointer-events: none;
+    background: linear-gradient(180deg, $primary-color, rgba($primary-color, 0.85) 70%, transparent);
   }
 }
 
