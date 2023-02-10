@@ -578,7 +578,7 @@ g path {
   &.translucent {
     padding: 2vw 0 2rem;
     pointer-events: none;
-    background: linear-gradient(180deg, $primary-color, rgba($primary-color, 0.9) 70%, transparent);
+    background: linear-gradient(180deg, $primary-color, rgba($primary-color, 0.8) 70%, transparent);
   }
 }
 
