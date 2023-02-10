@@ -541,7 +541,7 @@ g path {
 .home-section {
   min-height: calc(100vh - 11.5rem);
   overflow: auto;
-  padding-top: calc(3rem + 2vw);
+  padding-top: calc(1rem + 2vw);
 
   h1 {
     margin-bottom: 3rem;
@@ -576,9 +576,9 @@ g path {
   z-index: 100;
 
   &.translucent {
-    padding-top: 2vw;
+    padding: 2vw 0 2rem;
     pointer-events: none;
-    background: linear-gradient(180deg, $primary-color, rgba($primary-color, 0.85) 70%, transparent);
+    background: linear-gradient(180deg, $primary-color, rgba($primary-color, 0.9) 70%, transparent);
   }
 }
 
