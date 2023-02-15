@@ -418,15 +418,21 @@ div.alert {
 
 // Home page
 
-#bg-vid-wrapper {
-  background: linear-gradient(180deg, transparent 50%, $primary-color), url(../img/home-bg.webp) center bottom no-repeat;
+#welcome {
+  position: relative;
+  background-image: linear-gradient(180deg, transparent 50%, $primary-color);
+  background-size: cover;
+  overflow: auto;
+  min-height: 100vh;
+  padding-top: 0;
 }
 
-#bg-vid {
+#welcome-vid {
   object-fit: cover;
   background: linear-gradient(180deg, transparent 50%, $primary-color);
   height: 100vh;
   min-height: 70rem;
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -471,22 +477,6 @@ div.alert {
     border-width: 6px 0 6px 10px;
   }
 }
-
-#welcome {
-  position: relative;
-  background-image: linear-gradient(180deg, transparent 50%, $primary-color);
-  background-size: cover;
-  overflow: auto;
-  min-height: 100vh;
-  padding-top: 0;
-}
-
-// Mobile backgrounds //
-// @media screen and (max-width: 575px) {
-//   #welcome {
-//     background-image: linear-gradient(180deg, transparent 50%, $primary-color), url(../img/home-bg-sm.webp);
-//   }
-// }
 
 #home-logo {
   position: relative;

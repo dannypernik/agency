@@ -7,12 +7,10 @@
 {% endblock body_class %}
 
 {% block container %}
-<div id="bg-vid-wrapper">
-  <video id="bg-vid" muted autoPlay playsInline poster="{{ url_for('static', filename='img/home-bg-sm.webp') }}">
+  <video id="welcome-vid" muted autoPlay playsInline poster="{{ url_for('static', filename='img/home-bg-sm.webp') }}">
     <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.webm')}}" type="video/webm">
     <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.mp4') }}" type="video/mp4">
   </video>
-</div>
   
   <canvas id="my-canvas" style="display:none" width="250" height="150"></canvas>
 
@@ -211,7 +209,7 @@
   <script src="{{ url_for('static', filename='js/get-vid-color.js') }}"></script>
   
   <script>
-    const video = document.getElementById('bg-vid');
+    const video = document.getElementById('welcome-vid');
     const startPlayPromise = video.play();
     const vidToggle = document.querySelector('#vid-toggle');
 
@@ -219,7 +217,7 @@
       startPlayPromise
         .then()
         .catch((error) => {
-          video.classList.add('d-none');
+          video.innerHTML = "";
           vidToggle.parentElement.classList.add('d-none');
           document.documentElement.style.setProperty('--dynamic-color', rgb(32,72,92));
       });
@@ -233,7 +231,7 @@
     }
 
     vidToggle.onclick = function() {
-      playPause('bg-vid');
+      playPause('welcome-vid');
       document.getElementById('pause-play').classList.toggle('paused');
     }
   </script>

@@ -3,7 +3,7 @@
 // Main elements
 // var body = document.getElementsByTagName('body')[0];
 // var current_rgb = document.getElementById('current_rgb');
-var my_video = document.getElementById('bg-vid');
+var my_video = document.getElementById('welcome-vid');
 var my_canvas = document.getElementById('my-canvas');
 var my_canvas_context = my_canvas.getContext('2d', { willReadFrequently: true });
 var rgb_min = [20, 72, 92]

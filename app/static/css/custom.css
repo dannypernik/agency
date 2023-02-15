@@ -7021,15 +7021,21 @@ div.alert {
   overflow: unset;
 }
 
-#bg-vid-wrapper {
-  background: linear-gradient(180deg, transparent 50%, rgb(3, 32, 44)), url(../img/home-bg.webp) center bottom no-repeat;
+#welcome {
+  position: relative;
+  background-image: linear-gradient(180deg, transparent 50%, rgb(3, 32, 44));
+  background-size: cover;
+  overflow: auto;
+  min-height: 100vh;
+  padding-top: 0;
 }
 
-#bg-vid {
+#welcome-vid {
   object-fit: cover;
   background: linear-gradient(180deg, transparent 50%, rgb(3, 32, 44));
   height: 100vh;
   min-height: 70rem;
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -7065,15 +7071,6 @@ div.alert {
 #pause-play.paused {
   border-style: solid;
   border-width: 6px 0 6px 10px;
-}
-
-#welcome {
-  position: relative;
-  background-image: linear-gradient(180deg, transparent 50%, rgb(3, 32, 44));
-  background-size: cover;
-  overflow: auto;
-  min-height: 100vh;
-  padding-top: 0;
 }
 
 #home-logo {
