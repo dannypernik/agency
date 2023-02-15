@@ -418,10 +418,13 @@ div.alert {
 
 // Home page
 
+#bg-vid-wrapper {
+  background: linear-gradient(180deg, transparent 50%, $primary-color), url(../img/home-bg.webp) center bottom no-repeat;
+}
+
 #bg-vid {
   object-fit: cover;
-  background: linear-gradient(180deg, transparent 50%, $primary-color), url(../img/home-bg.webp) center bottom no-repeat;
-  width: 100vw;
+  background: linear-gradient(180deg, transparent 50%, $primary-color);
   height: 100vh;
   min-height: 70rem;
   position: absolute;
