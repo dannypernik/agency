@@ -6660,7 +6660,7 @@ progress {
 
 html {
   height: 100%;
-  scroll-padding-top: 7rem;
+  scroll-padding-top: 10rem;
 }
 
 @media (min-width: 576px) {
@@ -6674,7 +6674,7 @@ body {
   font-weight: 400;
   font-size: 1.8rem;
   line-height: 1.4;
-  color: #03202c;
+  color: rgb(3, 32, 44);
   display: flex;
   flex-direction: column;
   -ms-overflow-style: none;
@@ -6732,12 +6732,12 @@ input, textarea {
   border-bottom: 1px solid #999;
   width: 100%;
   outline: none;
-  color: #03202c;
+  color: rgb(3, 32, 44);
   background-color: transparent;
 }
 
 input:focus, textarea:focus {
-  border-bottom: 1px solid #03202c;
+  border-bottom: 1px solid rgb(3, 32, 44);
 }
 
 ::placeholder {
@@ -6763,11 +6763,11 @@ input[type=checkbox] + label::before {
   margin-right: 10px;
   width: 20px;
   height: 20px;
-  border: 2px solid #03202c;
+  border: 2px solid rgb(3, 32, 44);
   border-radius: 3px;
 }
 input[type=checkbox]:checked + label::before {
-  background-color: #03202c;
+  background-color: rgb(3, 32, 44);
 }
 input[type=checkbox]:checked + label::after {
   content: "";
@@ -6781,7 +6781,7 @@ input[type=checkbox]:checked + label::after {
   transform: rotate(-45deg);
 }
 input[type=checkbox]:focus + label::before {
-  box-shadow: 0 0px 8px #03202c;
+  box-shadow: 0 0px 8px rgb(3, 32, 44);
 }
 
 input[type=radio] {
@@ -6803,7 +6803,7 @@ input[type=radio] + label::before {
   width: 2rem;
   height: 2rem;
   background: transparent;
-  border: 2px solid #03202c;
+  border: 2px solid rgb(3, 32, 44);
   border-radius: 50%;
 }
 input[type=radio] + label::after {
@@ -6817,10 +6817,10 @@ input[type=radio] + label::after {
   height: 1rem;
 }
 input[type=radio]:checked + label::after {
-  background: #03202c;
+  background: rgb(3, 32, 44);
 }
 input[type=radio]:focus + label::before {
-  box-shadow: 0 0px 8px #03202c;
+  box-shadow: 0 0px 8px rgb(3, 32, 44);
 }
 
 .radio-wrapper {
@@ -6836,8 +6836,8 @@ input[type=radio]:focus + label::before {
 }
 
 select {
-  color: #03202c;
-  border: 2px solid #03202c;
+  color: rgb(3, 32, 44);
+  border: 2px solid rgb(3, 32, 44);
   border-radius: 10px;
   padding: 0.5rem 1rem;
 }
@@ -6873,7 +6873,7 @@ button:hover, .btn:hover, input[type=submit]:hover, .menu-link:hover {
 }
 
 .inverse {
-  background-color: #03202c;
+  background-color: rgb(3, 32, 44);
   color: white;
 }
 .inverse a {
@@ -6911,8 +6911,8 @@ a.btn {
 }
 
 .btn.sec {
-  color: #03202c;
-  border-color: #03202c;
+  color: rgb(3, 32, 44);
+  border-color: rgb(3, 32, 44);
   background-color: transparent;
   font-weight: 400;
   width: fit-content;
@@ -7007,7 +7007,7 @@ div.alert {
   width: 100%;
   bottom: 0;
   padding-bottom: 20px;
-  background-color: #03202c;
+  background-color: rgb(3, 32, 44);
   color: white;
   margin-top: 11rem;
 }
@@ -7066,7 +7066,7 @@ div.alert {
 
 #welcome {
   position: relative;
-  background-image: linear-gradient(180deg, transparent 50%, #03202c);
+  background-image: linear-gradient(180deg, transparent 50%, rgb(3, 32, 44));
   background-size: cover;
   overflow: auto;
   min-height: 100vh;
@@ -7134,7 +7134,7 @@ g path {
 .home-section {
   min-height: calc(100vh - 11.5rem);
   overflow: auto;
-  padding-top: calc(3rem + 2vw);
+  padding-top: 2vw;
 }
 .home-section h1, .home-section .h1 {
   margin-bottom: 3rem;
@@ -7161,12 +7161,13 @@ g path {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: #03202c;
+  background-color: rgb(3, 32, 44);
   z-index: 100;
 }
-.sticky-header.transparent {
-  padding-top: 2vw;
+.sticky-header.translucent {
+  padding: 2vw 0 3rem;
   pointer-events: none;
+  background: linear-gradient(180deg, rgb(3, 32, 44), rgba(3, 32, 44, 0.8) 70%, transparent);
 }
 
 #nav-img {
@@ -7198,7 +7199,7 @@ g path {
 }
 
 .drawer__wrapper {
-  background-color: #03202c;
+  background-color: rgb(3, 32, 44);
   box-shadow: none;
 }
 

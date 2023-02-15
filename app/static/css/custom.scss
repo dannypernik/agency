@@ -3,7 +3,7 @@ $line-height-base: 1.4;
 $lead-font-size: calc(2rem + 0.1vw);
 $lead-font-weight: inherit;
 $spacer: 2rem;
-$primary-color: #03202c;
+$primary-color: rgb(3,32,44);
 $secondary-color: #26bad1;//4ad1cc;//58bba4;
 $highlight-color: #d35137;//e97435;;
 $grey: #ddd;
@@ -26,7 +26,7 @@ $font-family: 'Montserrat', 'Helvetica', sans-serif;
 
 html {
   height: 100%;
-  scroll-padding-top: 7rem;
+  scroll-padding-top: 10rem;
 }
 
 @media (min-width: 576px) {
@@ -551,7 +551,7 @@ g path {
 .home-section {
   min-height: calc(100vh - 11.5rem);
   overflow: auto;
-  padding-top: calc(3rem + 2vw);
+  padding-top: 2vw;
 
   h1 {
     margin-bottom: 3rem;
@@ -585,9 +585,10 @@ g path {
   background-color: $primary-color;
   z-index: 100;
 
-  &.transparent {
-    padding-top: 2vw;
-    pointer-events: none; 
+  &.translucent {
+    padding: 2vw 0 3rem;
+    pointer-events: none;
+    background: linear-gradient(180deg, $primary-color, rgba($primary-color, 0.8) 70%, transparent);
   }
 }
 
