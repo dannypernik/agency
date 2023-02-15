@@ -213,7 +213,7 @@
     const startPlayPromise = video.play();
     const vidToggle = document.querySelector('#vid-toggle');
 
-    if (startPlayPromise !== undefined) {
+    /*if (startPlayPromise !== undefined) {
       startPlayPromise
         .then()
         .catch((error) => {
@@ -222,7 +222,7 @@
           document.getElementById('welcome').style.backgroundImage = "linear-gradient(180deg, transparent 50%, rgb(3,32,44)), url('../static/img/home-bg-sm.webp')";
           document.documentElement.style.setProperty('--dynamic-color', rgb(32,72,92));
       });
-    };
+    };*/
 
     function playPause (id) {
       if (video.paused)
