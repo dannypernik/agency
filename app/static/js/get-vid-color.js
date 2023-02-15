@@ -58,33 +58,7 @@ var init = function(){
   my_canvas.width = window.innerWidth/2;
   my_canvas.height = window.innerHeight/2;
   // Start updating the bg color
-
-  const video = document.getElementById('bg-vid');
-    const startPlayPromise = video.play();
-    const vidToggle = document.querySelector('#vid-toggle');
-
-    if (startPlayPromise !== undefined) {
-      startPlayPromise
-        .then(update_bg())
-        .catch((error) => {
-          video.classList.add('d-none');
-          vidToggle.parentElement.classList.add('d-none');
-          document.documentElement.style.setProperty('--dynamic-color', rgb(32,72,92));
-          document.getElementById('welcome').style.backgroundImage("url(../img/home-bg.webp)");
-      });
-    };
-
-    function playPause (id) {
-      if (video.paused)
-        video.play();
-      else
-        video.pause();
-    }
-
-    vidToggle.onclick = function() {
-      playPause('bg-vid');
-      document.getElementById('pause-play').classList.toggle('paused');
-    }
+  update_bg();
 }
 
 document.addEventListener("DOMContentLoaded", init);
