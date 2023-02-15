@@ -420,7 +420,7 @@ div.alert {
 
 #bg-vid {
   object-fit: cover;
-  background-position-y: bottom;
+  background: linear-gradient(180deg, transparent 50%, $primary-color), url(../img/home-bg.webp) center bottom no-repeat;
   width: 100vw;
   height: 100vh;
   min-height: 70rem;
@@ -471,7 +471,7 @@ div.alert {
 
 #welcome {
   position: relative;
-  background-image: linear-gradient(180deg, transparent 50%, $primary-color);//, url(../img/home-bg.webp) center top no-repeat;
+  background-image: linear-gradient(180deg, transparent 50%, $primary-color);
   background-size: cover;
   overflow: auto;
   min-height: 100vh;

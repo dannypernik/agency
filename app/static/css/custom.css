@@ -7023,7 +7023,7 @@ div.alert {
 
 #bg-vid {
   object-fit: cover;
-  background-position-y: bottom;
+  background: linear-gradient(180deg, transparent 50%, rgb(3, 32, 44)), url(../img/home-bg.webp) center bottom no-repeat;
   width: 100vw;
   height: 100vh;
   min-height: 70rem;
