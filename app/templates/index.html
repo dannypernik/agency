@@ -8,9 +8,8 @@
 
 {% block container %}
   <video id="welcome-vid" muted autoPlay playsInline poster="{{ url_for('static', filename='img/home-bg-sm.webp') }}">
-    <!-- <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.webm')}}" type="video/webm">
-    <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.mp4') }}" type="video/mp4"> -->
-    <img src="{{ url_for('static', filename='img/home-bg-sm.jpg') }}">
+    <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.webm')}}" type="video/webm">
+    <source src="{{ url_for('static', filename='media/lay-z-owl-pexels.mp4') }}" type="video/mp4">
   </video>
   
   <canvas id="my-canvas" style="display:none" width="250" height="150"></canvas>
@@ -218,8 +217,9 @@
       startPlayPromise
         .then()
         .catch((error) => {
-          //video.innerHTML = "";
+          video.classList.add('d-none');
           vidToggle.parentElement.classList.add('d-none');
+          document.getElementById('welcome').style.backgroundImage = "linear-gradient(180deg, transparent 50%, rgb(3,32,44)), url('../static/img/home-bg-sm.webp')";
           document.documentElement.style.setProperty('--dynamic-color', rgb(32,72,92));
       });
     };
