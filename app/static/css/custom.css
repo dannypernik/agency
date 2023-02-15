@@ -6655,7 +6655,7 @@ progress {
   }
 }
 :root {
-  --dynamic-color: #ffffff;
+  --dynamic-color: rgb(32,72,92);
 }
 
 html {
@@ -6855,15 +6855,6 @@ a.btn:hover {
   text-decoration: none;
 }
 
-.home-nav a:before {
-  display: block;
-  font-weight: 600;
-  content: attr(data-text);
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-}
-
 button, .btn, input[type=submit] {
   display: block;
   margin: 0 auto 1.5rem;
@@ -7032,6 +7023,7 @@ div.alert {
 
 #bg-vid {
   object-fit: cover;
+  background-position-y: bottom;
   width: 100vw;
   height: 100vh;
   min-height: 70rem;
@@ -7043,6 +7035,7 @@ div.alert {
 #vid-toggle {
   border: 2px solid var(--dynamic-color);
   width: fit-content;
+  margin: calc(3rem + 2vw) 0;
   padding: 6px;
   border-radius: 9px;
   opacity: 0.75;
@@ -7073,16 +7066,17 @@ div.alert {
 
 #welcome {
   position: relative;
-  background: linear-gradient(180deg, transparent 50%, #03202c);
+  background-image: linear-gradient(180deg, transparent 50%, #03202c);
   background-size: cover;
   overflow: auto;
   min-height: 100vh;
+  padding-top: 0;
 }
 
 #home-logo {
   position: relative;
   display: block;
-  margin: 3rem auto 4rem;
+  margin: 5rem auto;
   height: calc(12rem + 3vw);
 }
 
@@ -7090,13 +7084,13 @@ div.alert {
   font-family: "Montserrat", sans-serif;
   font-size: 5rem;
   font-weight: 700;
-  margin: 4rem 0;
+  margin: 3rem 0;
 }
 
 @media (min-width: 576px) {
   #home-title {
     font-size: calc(1.8rem + 3vw);
-    margin: 5rem 0;
+    margin: 4rem 0;
   }
 }
 #home-tagline {
@@ -7110,6 +7104,7 @@ div.alert {
   justify-content: space-between;
   background-color: transparent;
   border: none;
+  padding: calc(3rem + 2vw) 0;
 }
 .home-nav li {
   list-style: none;
@@ -7118,11 +7113,18 @@ div.alert {
   color: var(--dynamic-color);
   font-size: 2rem;
   text-decoration: none;
-  padding-bottom: calc(2rem + 2vw);
   text-transform: capitalize;
 }
 .home-nav a:focus, .home-nav a:hover {
   font-weight: 600;
+}
+.home-nav a:before {
+  display: block;
+  font-weight: 600;
+  content: attr(data-text);
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
 }
 
 g path {
@@ -7144,7 +7146,7 @@ g path {
 
 .home-next {
   display: table;
-  margin: 2rem auto 14rem;
+  margin: 1rem auto 14rem;
   text-align: center;
 }
 .home-next a {

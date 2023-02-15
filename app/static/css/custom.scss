@@ -21,7 +21,7 @@ $font-family: 'Montserrat', 'Helvetica', sans-serif;
 @import "menu.css";
 
 :root {
-  --dynamic-color: #ffffff;
+  --dynamic-color: rgb(32,72,92);
 }
 
 html {
@@ -240,15 +240,6 @@ a {
   }
 }
 
-.home-nav a:before {
-  display: block;
-  font-weight: 600;
-  content: attr(data-text);
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-}
-
 button, .btn, input[type='submit'] {
   display: block;
   margin: 0 auto 1.5rem;
@@ -429,6 +420,7 @@ div.alert {
 
 #bg-vid {
   object-fit: cover;
+  background-position-y: bottom;
   width: 100vw;
   height: 100vh;
   min-height: 70rem;
@@ -440,6 +432,7 @@ div.alert {
 #vid-toggle {
   border: 2px solid var(--dynamic-color);
   width: fit-content;
+  margin: calc(3rem + 2vw) 0;
   padding: 6px;
   border-radius: 9px;
   opacity: 0.75;
@@ -478,16 +471,24 @@ div.alert {
 
 #welcome {
   position: relative;
-  background: linear-gradient(180deg, transparent 50%, $primary-color);
+  background-image: linear-gradient(180deg, transparent 50%, $primary-color);//, url(../img/home-bg.webp) center top no-repeat;
   background-size: cover;
   overflow: auto;
   min-height: 100vh;
+  padding-top: 0;
 }
+
+// Mobile backgrounds //
+// @media screen and (max-width: 575px) {
+//   #welcome {
+//     background-image: linear-gradient(180deg, transparent 50%, $primary-color), url(../img/home-bg-sm.webp);
+//   }
+// }
 
 #home-logo {
   position: relative;
   display: block;
-  margin: 3rem auto 4rem;
+  margin: 5rem auto;
   height: calc(12rem + 3vw);
 }
 
@@ -495,13 +496,13 @@ div.alert {
   font-family: "Montserrat", sans-serif;
   font-size: 5rem;
   font-weight: 700;
-  margin: 4rem 0;
+  margin: 3rem 0;
 }
 
 @media (min-width: 576px) {
   #home-title {
     font-size: calc(1.8rem + 3vw);
-    margin: 5rem 0;
+    margin: 4rem 0;
   }
 }
 
@@ -516,6 +517,7 @@ div.alert {
   justify-content: space-between;
   background-color: transparent;
   border: none;
+  padding: calc(3rem + 2vw) 0;
 
   li {
     list-style: none;
@@ -525,12 +527,20 @@ div.alert {
     color: var(--dynamic-color);
     font-size: 2rem;
     text-decoration: none;
-    padding-bottom: calc(2rem + 2vw);
     text-transform: capitalize;
   }
 
   a:focus, a:hover {
     font-weight: 600;
+  }
+
+  a:before {
+    display: block;
+    font-weight: 600;
+    content: attr(data-text);
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
   }
 }
 
@@ -554,7 +564,7 @@ g path {
 
 .home-next {
   display: table;
-  margin: 2rem auto 14rem;
+  margin: 1rem auto 14rem;
   text-align: center;
 
   a {
