@@ -219,6 +219,7 @@
         .then()
         .catch((error) => {
           video.classList.add('d-none');
+          video.pause();
           vidToggle.parentElement.classList.add('d-none');
           document.getElementById('welcome').style.backgroundImage = "linear-gradient(180deg, transparent 50%, rgb(3,32,44)), url('../static/img/home-bg-sm.webp')";
           document.documentElement.style.setProperty('--dynamic-color', rgb(32,72,92));
