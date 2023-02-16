@@ -6861,7 +6861,7 @@ button, .btn, input[type=submit] {
   padding: 1rem 2rem;
   background-color: #26bad1;
   filter: saturate(0.75);
-  border: none;
+  border: 1px solid #26bad1;
   color: white;
   transition: 0.3s;
   font-size: 1.7rem;
@@ -6870,6 +6870,7 @@ button, .btn, input[type=submit] {
 
 button:hover, .btn:hover, input[type=submit]:hover, .menu-link:hover {
   background-color: #1e94a6;
+  border-color: #1e94a6;
   color: white;
 }
 
@@ -6921,6 +6922,11 @@ a.btn {
   font-weight: 400;
   width: fit-content;
 }
+.btn.sec:hover {
+  background-color: #0d88bb;
+  border-color: #0d88bb;
+  color: white;
+}
 
 .btn.highlight {
   background-color: #d35137;
@@ -6933,7 +6939,6 @@ a.btn {
 
 .btn.sm {
   font-weight: 400;
-  border-width: 1px;
   margin: 0;
   padding: 0.5rem 2rem;
 }
