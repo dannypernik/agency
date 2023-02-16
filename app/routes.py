@@ -22,6 +22,8 @@ def dir_last_updated(folder):
                    for root_path, dirs, files in os.walk(folder)
                    for f in files))
 
+team_email = app.config['MAIL_USERNAME']
+
 @app.context_processor
 def inject_values():
     return dict(last_updated=dir_last_updated('app/static'))
@@ -48,7 +50,7 @@ def index():
             pass
         else:
             flash('A computer has questioned your humanity. Please try again.', 'error')
-            return redirect(url_for('home'))
+            return redirect(url_for('index'))
         user = User(first_name=form.first_name.data, email=form.email.data, phone=form.phone.data)
         message = form.message.data
         subject = form.subject.data
@@ -57,7 +59,7 @@ def index():
             flash('Please check ' + user.email + ' for a confirmation email. Thank you for reaching out!')
             return redirect(url_for('index', _anchor="home"))
         else:
-            flash('Email failed to send, please contact ' + hello, 'error')
+            flash('Email failed to send, please contact ' + team_email, 'error')
     return render_template('index.html', form=form)
 
 
@@ -91,7 +93,7 @@ def signup():
         if email_status == 200:
             flash("Welcome! Please check your inbox to verify your email.")
         else:
-            flash('Verification email failed to send, please contact ' + hello, 'error')
+            flash('Verification email failed to send, please contact ' + team_email, 'error')
         next = request.args.get('next')
         if not next or url_parse(next).netloc != '':
             return redirect(url_for('start_page'))
@@ -109,7 +111,7 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user is None or not user.check_password(form.password.data):
-            flash('Invalid username or password')
+            flash('Invalid username or password', 'error')
             return redirect(url_for('signin'))
         login_user(user)
         if user.is_verified != True:
@@ -117,7 +119,7 @@ def login():
             if email_status == 200:
                 flash('Please check your inbox to verify your email.')
             else:
-                flash('Verification email did not send. Please contact ' + hello)
+                flash('Verification email did not send. Please contact ' + team_email, 'error')
         next = request.args.get('next')
         if not next or url_parse(next).netloc != '':
             return redirect(url_for('start_page'))
@@ -136,7 +138,7 @@ def start_page():
     if current_user.is_admin:
         return redirect(url_for('users'))
     else:
-        return redirect(url_for('home'))
+        return redirect(url_for('index'))
 
 
 @app.route('/verify-email/<token>', methods=['GET', 'POST'])
@@ -170,7 +172,7 @@ def request_password_reset():
             if email_status == 200:
                 flash('Check your email for instructions to reset your password.')
             else:
-                flash('Email failed to send, please contact ' + hello, 'error')
+                flash('Email failed to send, please contact ' + team_email, 'error')
         else:
             flash('Check your email for instructions to reset your password')
         return redirect(url_for('signin'))

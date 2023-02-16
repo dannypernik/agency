@@ -6860,6 +6860,7 @@ button, .btn, input[type=submit] {
   margin: 0 auto 1.5rem;
   padding: 1rem 2rem;
   background-color: #26bad1;
+  filter: saturate(0.75);
   border: none;
   color: white;
   transition: 0.3s;
@@ -6875,6 +6876,9 @@ button:hover, .btn:hover, input[type=submit]:hover, .menu-link:hover {
 .inverse {
   background-color: rgb(3, 32, 44);
   color: white;
+}
+.inverse button, .inverse .btn, .inverse input[type=submit] {
+  filter: saturate(1);
 }
 .inverse a {
   color: white;
@@ -7023,6 +7027,7 @@ div.alert {
 
 #welcome {
   position: relative;
+  background-image: linear-gradient(180deg, transparent 50%, rgb(3, 32, 44));
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
