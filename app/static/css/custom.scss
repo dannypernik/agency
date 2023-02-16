@@ -253,10 +253,18 @@ button, .btn, input[type='submit'] {
   font-weight: 600;
 }
 
+.btn.sec {
+  color: $primary-color;
+  border-color: $primary-color;
+  background-color: transparent;
+  font-weight: 400;
+  width: fit-content;
+}
+
 button, .btn, input[type='submit'], .menu-link {
   &:hover {
-    background-color: darken($secondary-color, 10%);
-    border-color: darken($secondary-color, 10%);
+    background-color: lighten($primary-color, 15%);
+    border-color: lighten($primary-color, 15%);
     color: white;
   }
 }
@@ -267,6 +275,11 @@ button, .btn, input[type='submit'], .menu-link {
 
   button, .btn, input[type='submit'] {
     filter: saturate(1);
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+      border-color: darken($secondary-color, 10%);
+    }
   }
 
   a {
@@ -307,20 +320,6 @@ a.btn {
 .btn.clr {
   background-color: transparent;
   border-color: white;
-}
-
-.btn.sec {
-  color: $primary-color;
-  border-color: $primary-color;
-  background-color: transparent;
-  font-weight: 400;
-  width: fit-content;
-
-  &:hover {
-    background-color: lighten($primary-color, 15%);
-    border-color: lighten($primary-color, 15%);
-    color: white;
-  }
 }
 
 .btn.highlight {

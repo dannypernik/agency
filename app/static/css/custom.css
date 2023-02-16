@@ -6868,9 +6868,17 @@ button, .btn, input[type=submit] {
   font-weight: 600;
 }
 
+.btn.sec {
+  color: rgb(3, 32, 44);
+  border-color: rgb(3, 32, 44);
+  background-color: transparent;
+  font-weight: 400;
+  width: fit-content;
+}
+
 button:hover, .btn:hover, input[type=submit]:hover, .menu-link:hover {
-  background-color: #1e94a6;
-  border-color: #1e94a6;
+  background-color: #085474;
+  border-color: #085474;
   color: white;
 }
 
@@ -6880,6 +6888,10 @@ button:hover, .btn:hover, input[type=submit]:hover, .menu-link:hover {
 }
 .inverse button, .inverse .btn, .inverse input[type=submit] {
   filter: saturate(1);
+}
+.inverse button:hover, .inverse .btn:hover, .inverse input[type=submit]:hover {
+  background-color: #1e94a6;
+  border-color: #1e94a6;
 }
 .inverse a {
   color: white;
@@ -6913,19 +6925,6 @@ a.btn {
 .btn.clr {
   background-color: transparent;
   border-color: white;
-}
-
-.btn.sec {
-  color: rgb(3, 32, 44);
-  border-color: rgb(3, 32, 44);
-  background-color: transparent;
-  font-weight: 400;
-  width: fit-content;
-}
-.btn.sec:hover {
-  background-color: #085474;
-  border-color: #085474;
-  color: white;
 }
 
 .btn.highlight {
