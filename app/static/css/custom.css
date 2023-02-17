@@ -6674,7 +6674,7 @@ body {
   font-weight: 400;
   font-size: 1.8rem;
   line-height: 1.4;
-  color: rgb(3, 32, 44);
+  color: rgb(5, 40, 55);
   display: flex;
   flex-direction: column;
   -ms-overflow-style: none;
@@ -6732,12 +6732,12 @@ input, textarea {
   border-bottom: 1px solid #999;
   width: 100%;
   outline: none;
-  color: rgb(3, 32, 44);
+  color: rgb(5, 40, 55);
   background-color: transparent;
 }
 
 input:focus, textarea:focus {
-  border-bottom: 1px solid rgb(3, 32, 44);
+  border-bottom: 1px solid rgb(5, 40, 55);
 }
 
 ::placeholder {
@@ -6763,11 +6763,11 @@ input[type=checkbox] + label::before {
   margin-right: 10px;
   width: 20px;
   height: 20px;
-  border: 2px solid rgb(3, 32, 44);
+  border: 2px solid rgb(5, 40, 55);
   border-radius: 3px;
 }
 input[type=checkbox]:checked + label::before {
-  background-color: rgb(3, 32, 44);
+  background-color: rgb(5, 40, 55);
 }
 input[type=checkbox]:checked + label::after {
   content: "";
@@ -6781,7 +6781,7 @@ input[type=checkbox]:checked + label::after {
   transform: rotate(-45deg);
 }
 input[type=checkbox]:focus + label::before {
-  box-shadow: 0 0px 8px rgb(3, 32, 44);
+  box-shadow: 0 0px 8px rgb(5, 40, 55);
 }
 
 input[type=radio] {
@@ -6803,7 +6803,7 @@ input[type=radio] + label::before {
   width: 2rem;
   height: 2rem;
   background: transparent;
-  border: 2px solid rgb(3, 32, 44);
+  border: 2px solid rgb(5, 40, 55);
   border-radius: 50%;
 }
 input[type=radio] + label::after {
@@ -6817,10 +6817,10 @@ input[type=radio] + label::after {
   height: 1rem;
 }
 input[type=radio]:checked + label::after {
-  background: rgb(3, 32, 44);
+  background: rgb(5, 40, 55);
 }
 input[type=radio]:focus + label::before {
-  box-shadow: 0 0px 8px rgb(3, 32, 44);
+  box-shadow: 0 0px 8px rgb(5, 40, 55);
 }
 
 .radio-wrapper {
@@ -6836,8 +6836,8 @@ input[type=radio]:focus + label::before {
 }
 
 select {
-  color: rgb(3, 32, 44);
-  border: 2px solid rgb(3, 32, 44);
+  color: rgb(5, 40, 55);
+  border: 2px solid rgb(5, 40, 55);
   border-radius: 10px;
   padding: 0.5rem 1rem;
 }
@@ -6849,7 +6849,7 @@ select {
 a {
   display: inline-block;
   text-decoration: none;
-  color: #1a8090;
+  color: #26bad1;
 }
 a.btn:hover {
   text-decoration: none;
@@ -6859,45 +6859,41 @@ button, .btn, input[type=submit] {
   display: block;
   margin: 0 auto 1.5rem;
   padding: 1rem 2rem;
-  background-color: #26bad1;
-  filter: saturate(0.75);
-  border: 1px solid #26bad1;
+  background-color: #e79b32;
+  border: 1px solid #e79b32;
+  border-radius: 0;
   color: white;
   transition: 0.3s;
   font-size: 1.7rem;
   font-weight: 600;
 }
 
-.btn.sec {
-  color: rgb(3, 32, 44);
-  border-color: rgb(3, 32, 44);
-  background-color: transparent;
-  font-weight: 400;
-  width: fit-content;
-}
-
 button:hover, .btn:hover, input[type=submit]:hover, .menu-link:hover {
-  background-color: #085474;
-  border-color: #085474;
+  background-color: #d78719;
+  border-color: #d78719;
   color: white;
 }
 
 .inverse {
-  background-color: rgb(3, 32, 44);
+  background-color: rgb(5, 40, 55);
   color: white;
-}
-.inverse button, .inverse .btn, .inverse input[type=submit] {
-  filter: saturate(1);
-}
-.inverse button:hover, .inverse .btn:hover, .inverse input[type=submit]:hover {
-  background-color: #1e94a6;
-  border-color: #1e94a6;
 }
 .inverse a {
+  color: #e79b32;
+}
+.inverse button, .inverse .btn, .inverse input[type=submit] {
   color: white;
 }
+.inverse button:hover, .inverse .btn:hover, .inverse input[type=submit]:hover {
+  background-color: #ce8218;
+  border-color: #ce8218;
+}
+.inverse button:focus, .inverse .btn:focus, .inverse input[type=submit]:focus {
+  background-color: #d78719;
+  border-color: #d78719;
+}
 .inverse a.d-inline {
-  color: #26bad1;
+  color: #e79b32;
 }
 .inverse a.d-inline:hover {
   text-decoration: underline;
@@ -6905,9 +6901,12 @@ button:hover, .btn:hover, input[type=submit]:hover, .menu-link:hover {
 .inverse .home-nav a:hover, .inverse .home-next a:hover h4, .inverse .home-next a:hover .h4, .inverse #menu-btn:hover {
   font-weight: 600;
 }
-.inverse input, .inverse textarea {
+.inverse input[type=text], .inverse textarea {
   color: white;
   border-color: white;
+}
+.inverse input[type=text]:focus, .inverse textarea:focus {
+  border-color: #e79b32;
 }
 .inverse ::placeholder {
   color: white;
@@ -6920,6 +6919,18 @@ input[type=submit] {
 
 a.btn {
   display: inline-block;
+}
+
+.btn.sec {
+  color: rgb(5, 40, 55);
+  border-color: rgb(5, 40, 55);
+  background-color: transparent;
+  font-weight: 400;
+  width: fit-content;
+}
+.btn.sec:hover {
+  background-color: #0b5b7d;
+  color: white;
 }
 
 .btn.clr {
@@ -7015,7 +7026,7 @@ div.alert {
   width: 100%;
   bottom: 0;
   padding-bottom: 20px;
-  background-color: rgb(3, 32, 44);
+  background-color: rgb(5, 40, 55);
   color: white;
   margin-top: 11rem;
 }
@@ -7031,7 +7042,7 @@ div.alert {
 
 #welcome {
   position: relative;
-  background-image: linear-gradient(180deg, transparent 50%, rgb(3, 32, 44));
+  background-image: linear-gradient(180deg, transparent 50%, rgb(5, 40, 55));
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7042,7 +7053,7 @@ div.alert {
 
 #welcome-vid {
   object-fit: cover;
-  background: linear-gradient(180deg, transparent 50%, rgb(3, 32, 44));
+  background: linear-gradient(180deg, transparent 50%, rgb(5, 40, 55));
   height: 100vh;
   min-height: 70rem;
   width: 100%;
@@ -7159,9 +7170,6 @@ g path {
   margin: 1rem auto 14rem;
   text-align: center;
 }
-.home-next a {
-  color: #26bad1;
-}
 
 .bi-chevron-down {
   font-size: 1rem;
@@ -7171,13 +7179,13 @@ g path {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: rgb(3, 32, 44);
+  background-color: rgb(5, 40, 55);
   z-index: 100;
 }
 .sticky-header.translucent {
   padding: 2vw 0 3rem;
   pointer-events: none;
-  background: linear-gradient(180deg, rgb(3, 32, 44), rgba(3, 32, 44, 0.8) 70%, transparent);
+  background: linear-gradient(180deg, rgb(5, 40, 55), rgba(5, 40, 55, 0.8) 70%, transparent);
 }
 
 #nav-img {
@@ -7209,7 +7217,7 @@ g path {
 }
 
 .drawer__wrapper {
-  background-color: rgb(3, 32, 44);
+  background-color: rgb(5, 40, 55);
   box-shadow: none;
 }
 

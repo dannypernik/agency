@@ -3,8 +3,8 @@ $line-height-base: 1.4;
 $lead-font-size: calc(2rem + 0.1vw);
 $lead-font-weight: inherit;
 $spacer: 2rem;
-$primary-color: rgb(3,32,44);
-$secondary-color: #26bad1;//4ad1cc;//58bba4;
+$primary-color: rgb(5, 40, 55);
+$secondary-color: #e79b32;//#26bad1;//4ad1cc;//58bba4;
 $highlight-color: #d35137;//e97435;;
 $grey: #ddd;
 $font-family: 'Montserrat', 'Helvetica', sans-serif;
@@ -233,7 +233,7 @@ select {
 a {
   display: inline-block;
   text-decoration: none;
-  color: darken($secondary-color, 15%);
+  color: #26bad1;
 
   &.btn:hover {
     text-decoration: none;
@@ -245,26 +245,18 @@ button, .btn, input[type='submit'] {
   margin: 0 auto 1.5rem;
   padding: 1rem 2rem;
   background-color: $secondary-color;
-  filter: saturate(0.75);
   border: 1px solid $secondary-color;
+  border-radius: 0;
   color: white;
   transition: 0.3s;
   font-size: 1.7rem;
   font-weight: 600;
 }
 
-.btn.sec {
-  color: $primary-color;
-  border-color: $primary-color;
-  background-color: transparent;
-  font-weight: 400;
-  width: fit-content;
-}
-
 button, .btn, input[type='submit'], .menu-link {
   &:hover {
-    background-color: lighten($primary-color, 15%);
-    border-color: lighten($primary-color, 15%);
+    background-color: darken($secondary-color, 8%);
+    border-color: darken($secondary-color, 8%);
     color: white;
   }
 }
@@ -273,17 +265,22 @@ button, .btn, input[type='submit'], .menu-link {
   background-color: $primary-color;
   color: white;
 
+  a {
+    color: $secondary-color;
+  }
+
   button, .btn, input[type='submit'] {
-    filter: saturate(1);
+    color: white;
 
     &:hover {
       background-color: darken($secondary-color, 10%);
       border-color: darken($secondary-color, 10%);
     }
-  }
 
-  a {
-    color: white;
+    &:focus {
+      background-color: darken($secondary-color, 8%);
+      border-color: darken($secondary-color, 8%);
+    }
   }
 
   a.d-inline {
@@ -298,9 +295,13 @@ button, .btn, input[type='submit'], .menu-link {
     font-weight: 600;
   }
 
-  input, textarea {
+  input[type='text'], textarea {
     color: white;
     border-color: white;
+
+    &:focus {
+      border-color: $secondary-color;
+    }
   }
 
   ::placeholder {
@@ -315,6 +316,19 @@ input[type='submit'] {
 
 a.btn {
   display: inline-block;
+}
+
+.btn.sec {
+  color: $primary-color;
+  border-color: $primary-color;
+  background-color: transparent;
+  font-weight: 400;
+  width: fit-content;
+
+  &:hover {
+    background-color: lighten($primary-color, 15%);
+    color: white;
+  }
 }
 
 .btn.clr {
@@ -428,7 +442,7 @@ div.alert {
 
 #welcome {
   position: relative;
-  background-image: linear-gradient(180deg, transparent 50%, rgb(3,32,44));
+  background-image: linear-gradient(180deg, transparent 50%, $primary-color);
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -569,10 +583,6 @@ g path {
   display: table;
   margin: 1rem auto 14rem;
   text-align: center;
-
-  a {
-    color: $secondary-color;
-  }
 }
 
 .bi-chevron-down {
