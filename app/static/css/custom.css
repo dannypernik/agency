@@ -6965,13 +6965,13 @@ div.message {
   font-size: 1.5rem;
   margin-bottom: 0;
   color: #004085;
-  background-color: white;
-  border-color: white;
+  background-color: #d2e7ff;
+  border-color: #d2e7ff;
 }
 div.message.error {
   color: #850017;
-  background-color: white;
-  border-color: white;
+  background-color: #ffebee;
+  border-color: #ffebee;
 }
 div.message a {
   text-decoration: underline;

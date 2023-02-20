@@ -16,6 +16,7 @@ def send_contact_email(user, message):
         'Messages': [
             {
                 "From": {
+                    "Name": "CreatorsWeb.co",
                     "Email": app.config['MAIL_USERNAME'],
                 },
                 "To": [
@@ -34,7 +35,6 @@ def send_contact_email(user, message):
     result = mailjet.send.create(data=data)
 
     if result.status_code == 200:
-        send_confirmation_email(user, message)
         print("Contact email sent from " + user.email)
     else:
         print("Contact email from " + user.email + " failed with code " + str(result.status_code))
@@ -50,6 +50,7 @@ def send_confirmation_email(user, message):
         'Messages': [
             {
                 "From": {
+                    "Name": "CreatorsWeb.co",
                     "Email": app.config['MAIL_USERNAME'],
                 },
                 "To": [
@@ -59,7 +60,7 @@ def send_confirmation_email(user, message):
                 ],
                 "Subject": "Confirmation email",
                 "HTMLPart": render_template('email/confirmation-email.html',
-                                         user=user, message=message)
+                                            user=user, message=message)
             }
         ]
     }
@@ -83,6 +84,7 @@ def send_verification_email(user):
         'Messages': [
             {
                 "From": {
+                    "Name": "CreatorsWeb.co",
                     "Email": app.config['MAIL_USERNAME'],
                 },
                 "To": [
@@ -121,6 +123,7 @@ def send_password_reset_email(user):
         'Messages': [
             {
                 "From": {
+                    "Name": "CreatorsWeb.co",
                     "Email": app.config['MAIL_USERNAME'],
                 },
                 "To": [

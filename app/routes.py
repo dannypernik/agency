@@ -8,7 +8,8 @@ from flask_login import current_user, login_user, logout_user, login_required, l
 from app.models import User
 from werkzeug.urls import url_parse
 from datetime import datetime
-from app.email import send_contact_email, send_verification_email, send_password_reset_email
+from app.email import send_contact_email, send_confirmation_email, send_verification_email, \
+    send_password_reset_email
 from functools import wraps
 
 @app.before_request
@@ -56,7 +57,8 @@ def index():
         subject = form.subject.data
         email_status = send_contact_email(user, message)
         if email_status == 200:
-            flash('Please check ' + user.email + ' for a confirmation email. Thank you for reaching out!')
+            send_confirmation_email(user, message)
+            flash('Message received. Please check ' + user.email + ' for a confirmation email. Thank you for reaching out!')
             return redirect(url_for('index', _anchor="home"))
         else:
             flash('Email failed to send, please contact ' + team_email, 'error')

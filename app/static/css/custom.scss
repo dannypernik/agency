@@ -383,13 +383,13 @@ div.message {
   font-size: 1.5rem;
   margin-bottom: 0;
   color: $message-color;
-  background-color: lighten($message-color, 90%);
-  border-color: lighten($message-color, 90%);
+  background-color: lighten($message-color, 65%);
+  border-color: lighten($message-color, 65%);
 
   &.error {
     color: $alert-color;
-    background-color: lighten($alert-color, 95%);
-    border-color: lighten($alert-color, 95%);
+    background-color: lighten($alert-color, 70%);
+    border-color: lighten($alert-color, 70%);
   }
 
   a {
