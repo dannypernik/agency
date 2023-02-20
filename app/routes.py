@@ -113,13 +113,14 @@ def login():
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password', 'error')
             return redirect(url_for('signin'))
-        login_user(user)
         if user.is_verified != True:
             email_status = send_verification_email(user)
             if email_status == 200:
-                flash('Please check your inbox to verify your email.')
+                flash('Please check your inbox to verify your email before logging in.')
             else:
                 flash('Verification email did not send. Please contact ' + team_email, 'error')
+            return redirect(url_for('signin'))
+        login_user(user)
         next = request.args.get('next')
         if not next or url_parse(next).netloc != '':
             return redirect(url_for('start_page'))
@@ -174,7 +175,7 @@ def request_password_reset():
             else:
                 flash('Email failed to send, please contact ' + team_email, 'error')
         else:
-            flash('Check your email for instructions to reset your password')
+            flash('Check your email for instructions to reset your password.')
         return redirect(url_for('signin'))
     return render_template('request-password-reset.html', title='Reset password', form=form)
 

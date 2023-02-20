@@ -6,7 +6,8 @@ $spacer: 2rem;
 $primary-color: rgb(5, 40, 55);
 $secondary-color: #e79b32;//#26bad1;//4ad1cc;//58bba4;
 $highlight-color: #d35137;//e97435;;
-$grey: #ddd;
+$message-color: #004085;
+$alert-color: #850017;
 $font-family: 'Montserrat', 'Helvetica', sans-serif;
 
 @import "../scss/bootstrap-reboot.scss";
@@ -45,11 +46,21 @@ body {
   display: flex;
   flex-direction:  column;
   -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-body::-webkit-scrollbar {
-  display: none;
+.content {
+  flex: 1 0 auto;
 }
+
+.row {
+  margin: 0;
+}
+
+// Headings and text //
 
 p, h1, h2, h3, h4, h5, h6 {
   margin-bottom: 2.5rem;
@@ -60,7 +71,6 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 h1, .h1 {
-  font-family: $font-family;
   font-size: calc(2.3rem + 1vw);
   font-weight: 700;
   margin-bottom: 3rem;
@@ -86,10 +96,92 @@ h6, .h6 {
   font-size: calc(1.4rem + 0.25vw);
 }
 
-.row {
-  margin-left: 0;
-  margin-right: 0;
+// Links and buttons //
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #26bad1;
+
+  &.btn {
+    display: inline-block;
+  }
 }
+
+button, .btn, input[type='submit'] {
+  display: block;
+  margin: 2rem auto 1.5rem;
+  padding: 1rem 2rem;
+  background-color: $secondary-color;
+  border: 1px solid $secondary-color;
+  border-bottom-width: 0;
+  border-radius: 0.375rem;
+  color: white;
+  transition: 0.3s background-color;
+  font-size: 1.7rem;
+  font-weight: 600;
+
+  &:hover {
+    background-color: darken($secondary-color, 8%);
+    color: white;
+  }
+
+  &:active {
+    border-color: white;
+  }
+  
+  &.sec {
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    background-color: transparent;
+    font-weight: 400;
+    width: fit-content;
+  
+    &:hover {
+      background-color: lighten($primary-color, 15%);
+      color: white;
+    }
+  }
+  
+  &.clr {
+    background-color: transparent;
+    border-color: white;
+  }
+
+  &.sm {
+    font-weight: 400;
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+  }
+  
+  &.cta {
+    margin-top: calc(1rem + 1vw);
+    font-size: $lead-font-size;
+  }
+  
+  &.highlight {
+    background-color: $highlight-color;
+    border: none;
+
+    &:hover {
+      background-color: darken($highlight-color, 8%);//#b03e28;
+    }
+  }
+  
+  &.alert {
+    color: $alert-color;
+    border-color: $alert-color;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $alert-color;
+      border-color: $alert-color;
+      color: white;
+    }
+  }
+}
+
+// Inputs //
 
 input, textarea {
   font-size: 1.6rem;
@@ -101,10 +193,10 @@ input, textarea {
   outline: none;
   color: $primary-color;
   background-color: transparent;
-}
 
-input:focus, textarea:focus {
-  border-bottom: 1px solid $primary-color;
+  &:focus {
+    border-bottom: 1px solid $secondary-color;
+  }
 }
 
 ::placeholder {
@@ -157,7 +249,6 @@ input[type='checkbox'] {
     box-shadow: 0 0px 8px $primary-color;
   }
 }
-
 
 input[type='radio'] {
   opacity: 0;
@@ -226,40 +317,7 @@ select {
   padding: 0.5rem 1rem;
 }
 
-.semibold {
-  font-weight: 600;
-}
-
-a {
-  display: inline-block;
-  text-decoration: none;
-  color: #26bad1;
-
-  &.btn:hover {
-    text-decoration: none;
-  }
-}
-
-button, .btn, input[type='submit'] {
-  display: block;
-  margin: 0 auto 1.5rem;
-  padding: 1rem 2rem;
-  background-color: $secondary-color;
-  border: 1px solid $secondary-color;
-  border-radius: 0;
-  color: white;
-  transition: 0.3s;
-  font-size: 1.7rem;
-  font-weight: 600;
-}
-
-button, .btn, input[type='submit'], .menu-link {
-  &:hover {
-    background-color: darken($secondary-color, 8%);
-    border-color: darken($secondary-color, 8%);
-    color: white;
-  }
-}
+// Styling for dark backgrounds //
 
 .inverse {
   background-color: $primary-color;
@@ -274,12 +332,14 @@ button, .btn, input[type='submit'], .menu-link {
 
     &:hover {
       background-color: darken($secondary-color, 10%);
-      border-color: darken($secondary-color, 10%);
     }
 
     &:focus {
       background-color: darken($secondary-color, 8%);
-      border-color: darken($secondary-color, 8%);
+    }
+
+    &:active {
+      border-color: $primary-color;
     }
   }
 
@@ -310,135 +370,38 @@ button, .btn, input[type='submit'], .menu-link {
   }
 }
 
-input[type='submit'] {
-  margin-top: 2rem;
-}
-
-a.btn {
-  display: inline-block;
-}
-
-.btn.sec {
-  color: $primary-color;
-  border-color: $primary-color;
-  background-color: transparent;
-  font-weight: 400;
-  width: fit-content;
-
-  &:hover {
-    background-color: lighten($primary-color, 15%);
-    color: white;
-  }
-}
-
-.btn.clr {
-  background-color: transparent;
-  border-color: white;
-}
-
-.btn.highlight {
-  background-color: $highlight-color;
-  border: none;
-}
-
-.btn.highlight:hover {
-  background-color: darken($highlight-color, 8%);//#b03e28;
-}
-
-.btn.sm {
-  font-weight: 400;
-  margin: 0;
-  padding: 0.5rem 2rem;
-}
-
-.btn.cta {
-  margin-top: calc(1rem + 1vw);
-  font-size: $lead-font-size;
-}
-
-.row:hover > div > .btn.edit {
-  display: inline-block;
-}
-
-.btn.alert {
-  color: #d61212;
-  border-color: #d61212;
-  background-color: transparent;
-}
-
-.btn.alert:hover {
-  background-color: #d61212;
-  border-color: #d61212;
-  color: white;
-}
-
 .img-fluid {
   max-width: 100%;
   height: auto;
 }
 
-#home-alert {
-  width: 100%;
-}
-
-div.alert {
+div.message {
   padding: 0.5rem 0;
   text-align: center;
+  width: 100%;
   font-size: 1.5rem;
   margin-bottom: 0;
-  color: #004085;
-  background-color: #cce5ff;
-  border-color: #b8daff;
+  color: $message-color;
+  background-color: lighten($message-color, 90%);
+  border-color: lighten($message-color, 90%);
+
+  &.error {
+    color: $alert-color;
+    background-color: lighten($alert-color, 95%);
+    border-color: lighten($alert-color, 95%);
+  }
+
+  a {
+    text-decoration: underline;
+    white-space: nowrap;
+  }
 }
 
-.alert.error {
-  color: #850017;
-  background-color: #ffd4db;
-  border-color: #ffd4db;
-}
-
-.alert a {
-  text-decoration: underline;
-  white-space: nowrap;
-}
-
-.section-margin {
+.title-margin {
   padding-top: calc(2rem + 3vw);
 }
 
-.page-title {
-  font-family: $font-family;
-  font-size: calc(2.25rem + 1vw);
-}
-
-.content {
-  flex: 1 0 auto;
-}
-
-#contact {
-  position: relative;
-}
-
-.footer {
-  flex-shrink: 0;
-  width: 100%;
-  bottom: 0;
-  padding-bottom: 20px;
-  background-color: $primary-color;
-  color: white;
-  margin-top: 11rem;
-}
-
-.nav-gap {
-  height: 60px;
-  width: 100%;
-}
-
-#free-trial {
-  overflow: unset;
-}
-
-// Home page
+// Home page //
 
 #welcome {
   position: relative;
@@ -471,12 +434,10 @@ div.alert {
   opacity: 0.75;
 
   &:hover {
-    //border-color: $secondary-color;
     cursor: pointer;
     opacity: 1;
 
     #pause-play {
-      //border-color: transparent transparent transparent $secondary-color;
       opacity: 1;
     }
   }
@@ -510,7 +471,6 @@ div.alert {
 }
 
 #home-title {
-  font-family: "Montserrat", sans-serif;
   font-size: 5rem;
   font-weight: 700;
   margin: 3rem 0;
@@ -573,10 +533,10 @@ g path {
   h1 {
     margin-bottom: 3rem;
   }
-}
 
-.home-section.end {
-  min-height: calc(100vh - 30rem);
+  &.end {
+    min-height: calc(100vh - 30rem);
+  }
 }
 
 .home-next {
@@ -589,7 +549,11 @@ g path {
   font-size: 1rem;
 }
 
-// Nav //
+#contact {
+  position: relative;
+}
+
+// Header & footer //
 
 .sticky-header {
   position: -webkit-sticky;
@@ -623,10 +587,6 @@ g path {
   pointer-events: all;
 }
 
-#menu-btn:hover, #menu-btn:focus {
-  text-decoration: none;
-}
-
 #menu-icon {
   height: 25px;
   padding-left: 15px;
@@ -638,44 +598,43 @@ g path {
   box-shadow: none;
 }
 
-.drawer__back {
-  border: solid $grey;
-  border-width: 0 1px 1px 0;
-  display: inline-block;
-  padding: 5px;
-}
-
 .drawer__content a {
   display: inline;
 }
 
 .menu-link {
   height: 60px;
-  border-bottom: 1px solid $grey;
+  border-bottom: 1px solid white;
   color: white;
   transition: 0.3s;
+
+  &:hover {
+    background-color: darken($secondary-color, 8%);
+    color: white;
+  }
+
+  p {
+    padding: 1.7rem;
+    cursor: pointer;
+  }
 }
 
-.menu-link p {
-  padding: 1.7rem;
-  cursor: pointer;
+.footer {
+  flex-shrink: 0;
+  width: 100%;
+  bottom: 0;
+  padding-bottom: 20px;
+  background-color: $primary-color;
+  color: white;
+  margin-top: 11rem;
 }
 
-
-// Color classes
+// Single-attribute classes
 
 .dynamic-color {
   color: var(--dynamic-color);
 }
 
-.transparent {
-  background-color: transparent;
-}
-
-.white {
-  color: white;
-}
-
-.w-fit {
-  width: fit-content;
+.semibold {
+  font-weight: 600;
 }

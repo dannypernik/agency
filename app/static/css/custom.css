@@ -6679,9 +6679,13 @@ body {
   flex-direction: column;
   -ms-overflow-style: none;
 }
-
 body::-webkit-scrollbar {
   display: none;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -6719,9 +6723,76 @@ h6, .h6 {
   font-size: calc(1.4rem + 0.25vw);
 }
 
-.row {
-  margin-left: 0;
-  margin-right: 0;
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #26bad1;
+}
+
+a.btn {
+  display: inline-block;
+}
+
+button, .btn, input[type=submit] {
+  display: block;
+  margin: 2rem auto 1.5rem;
+  padding: 1rem 2rem;
+  background-color: #e79b32;
+  border: 1px solid #e79b32;
+  border-bottom-width: 0;
+  border-radius: 0.375rem;
+  color: white;
+  transition: 0.3s background-color;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+button:hover, .btn:hover, input[type=submit]:hover {
+  background-color: #d78719;
+  color: white;
+}
+button:active, .btn:active, input[type=submit]:active {
+  border-color: white;
+}
+button.sec, .btn.sec, input[type=submit].sec {
+  color: rgb(5, 40, 55);
+  border: 1px solid rgb(5, 40, 55);
+  background-color: transparent;
+  font-weight: 400;
+  width: fit-content;
+}
+button.sec:hover, .btn.sec:hover, input[type=submit].sec:hover {
+  background-color: #0b5b7d;
+  color: white;
+}
+button.clr, .btn.clr, input[type=submit].clr {
+  background-color: transparent;
+  border-color: white;
+}
+button.sm, .btn.sm, input[type=submit].sm {
+  font-weight: 400;
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+}
+button.cta, .btn.cta, input[type=submit].cta {
+  margin-top: calc(1rem + 1vw);
+  font-size: calc(2rem + 0.1vw);
+}
+button.highlight, .btn.highlight, input[type=submit].highlight {
+  background-color: #d35137;
+  border: none;
+}
+button.highlight:hover, .btn.highlight:hover, input[type=submit].highlight:hover {
+  background-color: #b94129;
+}
+button.alert, .btn.alert, input[type=submit].alert {
+  color: #850017;
+  border-color: #850017;
+  background-color: transparent;
+}
+button.alert:hover, .btn.alert:hover, input[type=submit].alert:hover {
+  background-color: #850017;
+  border-color: #850017;
+  color: white;
 }
 
 input, textarea {
@@ -6735,9 +6806,48 @@ input, textarea {
   color: rgb(5, 40, 55);
   background-color: transparent;
 }
-
 input:focus, textarea:focus {
-  border-bottom: 1px solid rgb(5, 40, 55);
+  border-bottom: 1px solid #e79b32;
+}
+
+.inverse {
+  background-color: rgb(5, 40, 55);
+  color: white;
+}
+.inverse a {
+  color: #e79b32;
+}
+.inverse button, .inverse .btn, .inverse input[type=submit] {
+  color: white;
+}
+.inverse button:hover, .inverse .btn:hover, .inverse input[type=submit]:hover {
+  background-color: #ce8218;
+}
+.inverse button:focus, .inverse .btn:focus, .inverse input[type=submit]:focus {
+  background-color: #d78719;
+}
+.inverse button:active, .inverse .btn:active, .inverse input[type=submit]:active {
+  border-color: rgb(5, 40, 55);
+}
+.inverse a.d-inline {
+  color: #e79b32;
+}
+.inverse a.d-inline:hover {
+  text-decoration: underline;
+}
+.inverse .home-nav a:hover, .inverse .home-next a:hover h4, .inverse .home-next a:hover .h4, .inverse #menu-btn:hover {
+  font-weight: 600;
+}
+.inverse input[type=text], .inverse textarea {
+  color: white;
+  border-color: white;
+}
+.inverse input[type=text]:focus, .inverse textarea:focus {
+  border-color: #e79b32;
+}
+.inverse ::placeholder {
+  color: white;
+  opacity: 0.5;
 }
 
 ::placeholder {
@@ -6842,166 +6952,30 @@ select {
   padding: 0.5rem 1rem;
 }
 
-.semibold {
-  font-weight: 600;
-}
-
-a {
-  display: inline-block;
-  text-decoration: none;
-  color: #26bad1;
-}
-a.btn:hover {
-  text-decoration: none;
-}
-
-button, .btn, input[type=submit] {
-  display: block;
-  margin: 0 auto 1.5rem;
-  padding: 1rem 2rem;
-  background-color: #e79b32;
-  border: 1px solid #e79b32;
-  border-radius: 0;
-  color: white;
-  transition: 0.3s;
-  font-size: 1.7rem;
-  font-weight: 600;
-}
-
-button:hover, .btn:hover, input[type=submit]:hover, .menu-link:hover {
-  background-color: #d78719;
-  border-color: #d78719;
-  color: white;
-}
-
-.inverse {
-  background-color: rgb(5, 40, 55);
-  color: white;
-}
-.inverse a {
-  color: #e79b32;
-}
-.inverse button, .inverse .btn, .inverse input[type=submit] {
-  color: white;
-}
-.inverse button:hover, .inverse .btn:hover, .inverse input[type=submit]:hover {
-  background-color: #ce8218;
-  border-color: #ce8218;
-}
-.inverse button:focus, .inverse .btn:focus, .inverse input[type=submit]:focus {
-  background-color: #d78719;
-  border-color: #d78719;
-}
-.inverse a.d-inline {
-  color: #e79b32;
-}
-.inverse a.d-inline:hover {
-  text-decoration: underline;
-}
-.inverse .home-nav a:hover, .inverse .home-next a:hover h4, .inverse .home-next a:hover .h4, .inverse #menu-btn:hover {
-  font-weight: 600;
-}
-.inverse input[type=text], .inverse textarea {
-  color: white;
-  border-color: white;
-}
-.inverse input[type=text]:focus, .inverse textarea:focus {
-  border-color: #e79b32;
-}
-.inverse ::placeholder {
-  color: white;
-  opacity: 0.5;
-}
-
-input[type=submit] {
-  margin-top: 2rem;
-}
-
-a.btn {
-  display: inline-block;
-}
-
-.btn.sec {
-  color: rgb(5, 40, 55);
-  border-color: rgb(5, 40, 55);
-  background-color: transparent;
-  font-weight: 400;
-  width: fit-content;
-}
-.btn.sec:hover {
-  background-color: #0b5b7d;
-  color: white;
-}
-
-.btn.clr {
-  background-color: transparent;
-  border-color: white;
-}
-
-.btn.highlight {
-  background-color: #d35137;
-  border: none;
-}
-
-.btn.highlight:hover {
-  background-color: #b94129;
-}
-
-.btn.sm {
-  font-weight: 400;
-  margin: 0;
-  padding: 0.5rem 2rem;
-}
-
-.btn.cta {
-  margin-top: calc(1rem + 1vw);
-  font-size: calc(2rem + 0.1vw);
-}
-
-.row:hover > div > .btn.edit {
-  display: inline-block;
-}
-
-.btn.alert {
-  color: #d61212;
-  border-color: #d61212;
-  background-color: transparent;
-}
-
-.btn.alert:hover {
-  background-color: #d61212;
-  border-color: #d61212;
-  color: white;
-}
-
 .img-fluid {
   max-width: 100%;
   height: auto;
 }
 
-#home-alert {
-  width: 100%;
-}
-
-div.alert {
+div.message {
   padding: 0.5rem 0;
   text-align: center;
+  width: 100%;
   font-size: 1.5rem;
   margin-bottom: 0;
   color: #004085;
-  background-color: #cce5ff;
-  border-color: #b8daff;
+  background-color: white;
+  border-color: white;
 }
-
-.alert.error {
-  color: #850017;
-  background-color: #ffd4db;
-  border-color: #ffd4db;
-}
-
-.alert a {
+div.message a {
   text-decoration: underline;
   white-space: nowrap;
+}
+
+.message.error {
+  color: #850017;
+  background-color: white;
+  border-color: white;
 }
 
 .section-margin {
@@ -7034,10 +7008,6 @@ div.alert {
 .nav-gap {
   height: 60px;
   width: 100%;
-}
-
-#free-trial {
-  overflow: unset;
 }
 
 #welcome {
@@ -7160,7 +7130,6 @@ g path {
 .home-section h1, .home-section .h1 {
   margin-bottom: 3rem;
 }
-
 .home-section.end {
   min-height: calc(100vh - 30rem);
 }
@@ -7206,10 +7175,6 @@ g path {
   pointer-events: all;
 }
 
-#menu-btn:hover, #menu-btn:focus {
-  text-decoration: none;
-}
-
 #menu-icon {
   height: 25px;
   padding-left: 15px;
@@ -7238,7 +7203,10 @@ g path {
   color: white;
   transition: 0.3s;
 }
-
+.menu-link:hover {
+  background-color: #d78719;
+  color: white;
+}
 .menu-link p {
   padding: 1.7rem;
   cursor: pointer;
@@ -7254,6 +7222,10 @@ g path {
 
 .white {
   color: white;
+}
+
+.semibold {
+  font-weight: 600;
 }
 
 .w-fit {
