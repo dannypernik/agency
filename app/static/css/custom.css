@@ -6683,9 +6683,12 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.content {
+  flex: 1 0 auto;
+}
+
 .row {
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0;
 }
 
 p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -6697,7 +6700,6 @@ p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 h1, .h1 {
-  font-family: "Montserrat", "Helvetica", sans-serif;
   font-size: calc(2.3rem + 1vw);
   font-weight: 700;
   margin-bottom: 3rem;
@@ -6728,7 +6730,6 @@ a {
   text-decoration: none;
   color: #26bad1;
 }
-
 a.btn {
   display: inline-block;
 }
@@ -6808,46 +6809,6 @@ input, textarea {
 }
 input:focus, textarea:focus {
   border-bottom: 1px solid #e79b32;
-}
-
-.inverse {
-  background-color: rgb(5, 40, 55);
-  color: white;
-}
-.inverse a {
-  color: #e79b32;
-}
-.inverse button, .inverse .btn, .inverse input[type=submit] {
-  color: white;
-}
-.inverse button:hover, .inverse .btn:hover, .inverse input[type=submit]:hover {
-  background-color: #ce8218;
-}
-.inverse button:focus, .inverse .btn:focus, .inverse input[type=submit]:focus {
-  background-color: #d78719;
-}
-.inverse button:active, .inverse .btn:active, .inverse input[type=submit]:active {
-  border-color: rgb(5, 40, 55);
-}
-.inverse a.d-inline {
-  color: #e79b32;
-}
-.inverse a.d-inline:hover {
-  text-decoration: underline;
-}
-.inverse .home-nav a:hover, .inverse .home-next a:hover h4, .inverse .home-next a:hover .h4, .inverse #menu-btn:hover {
-  font-weight: 600;
-}
-.inverse input[type=text], .inverse textarea {
-  color: white;
-  border-color: white;
-}
-.inverse input[type=text]:focus, .inverse textarea:focus {
-  border-color: #e79b32;
-}
-.inverse ::placeholder {
-  color: white;
-  opacity: 0.5;
 }
 
 ::placeholder {
@@ -6952,6 +6913,46 @@ select {
   padding: 0.5rem 1rem;
 }
 
+.inverse {
+  background-color: rgb(5, 40, 55);
+  color: white;
+}
+.inverse a {
+  color: #e79b32;
+}
+.inverse button, .inverse .btn, .inverse input[type=submit] {
+  color: white;
+}
+.inverse button:hover, .inverse .btn:hover, .inverse input[type=submit]:hover {
+  background-color: #ce8218;
+}
+.inverse button:focus, .inverse .btn:focus, .inverse input[type=submit]:focus {
+  background-color: #d78719;
+}
+.inverse button:active, .inverse .btn:active, .inverse input[type=submit]:active {
+  border-color: rgb(5, 40, 55);
+}
+.inverse a.d-inline {
+  color: #e79b32;
+}
+.inverse a.d-inline:hover {
+  text-decoration: underline;
+}
+.inverse .home-nav a:hover, .inverse .home-next a:hover h4, .inverse .home-next a:hover .h4, .inverse #menu-btn:hover {
+  font-weight: 600;
+}
+.inverse input[type=text], .inverse textarea {
+  color: white;
+  border-color: white;
+}
+.inverse input[type=text]:focus, .inverse textarea:focus {
+  border-color: #e79b32;
+}
+.inverse ::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
 .img-fluid {
   max-width: 100%;
   height: auto;
@@ -6967,47 +6968,18 @@ div.message {
   background-color: white;
   border-color: white;
 }
+div.message.error {
+  color: #850017;
+  background-color: white;
+  border-color: white;
+}
 div.message a {
   text-decoration: underline;
   white-space: nowrap;
 }
 
-.message.error {
-  color: #850017;
-  background-color: white;
-  border-color: white;
-}
-
-.section-margin {
+.title-margin {
   padding-top: calc(2rem + 3vw);
-}
-
-.page-title {
-  font-family: "Montserrat", "Helvetica", sans-serif;
-  font-size: calc(2.25rem + 1vw);
-}
-
-.content {
-  flex: 1 0 auto;
-}
-
-#contact {
-  position: relative;
-}
-
-.footer {
-  flex-shrink: 0;
-  width: 100%;
-  bottom: 0;
-  padding-bottom: 20px;
-  background-color: rgb(5, 40, 55);
-  color: white;
-  margin-top: 11rem;
-}
-
-.nav-gap {
-  height: 60px;
-  width: 100%;
 }
 
 #welcome {
@@ -7072,7 +7044,6 @@ div.message a {
 }
 
 #home-title {
-  font-family: "Montserrat", sans-serif;
   font-size: 5rem;
   font-weight: 700;
   margin: 3rem 0;
@@ -7144,6 +7115,10 @@ g path {
   font-size: 1rem;
 }
 
+#contact {
+  position: relative;
+}
+
 .sticky-header {
   position: -webkit-sticky;
   position: sticky;
@@ -7186,20 +7161,13 @@ g path {
   box-shadow: none;
 }
 
-.drawer__back {
-  border: solid #ddd;
-  border-width: 0 1px 1px 0;
-  display: inline-block;
-  padding: 5px;
-}
-
 .drawer__content a {
   display: inline;
 }
 
 .menu-link {
   height: 60px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid white;
   color: white;
   transition: 0.3s;
 }
@@ -7212,24 +7180,22 @@ g path {
   cursor: pointer;
 }
 
+.footer {
+  flex-shrink: 0;
+  width: 100%;
+  bottom: 0;
+  padding-bottom: 20px;
+  background-color: rgb(5, 40, 55);
+  color: white;
+  margin-top: 11rem;
+}
+
 .dynamic-color {
   color: var(--dynamic-color);
 }
 
-.transparent {
-  background-color: transparent;
-}
-
-.white {
-  color: white;
-}
-
 .semibold {
   font-weight: 600;
-}
-
-.w-fit {
-  width: fit-content;
 }
 
 /*# sourceMappingURL=custom.css.map */
