@@ -193,7 +193,9 @@
           <p class="mb-3">{{ form.email }}</p>
           <p class="mb-3">{{ form.phone }}</p>
           <p class="mb-3">{{ form.message(rows='4') }}</p>
-          {{ hcaptcha }}
+          <p class="text-center">
+            {{ hcaptcha }}
+          </p>
           {{ form.submit }}
         </form>
       </div>
