@@ -23,9 +23,9 @@ bootstrap = Bootstrap(app)
 app.config.update(
     XCAPTCHA_SITE_KEY=app.config['XCAPTCHA_SITE_KEY'],
     XCAPTCHA_SECRET_KEY=app.config['XCAPTCHA_SECRET_KEY'],
-    XCAPTCHA_VERIFY_URL=https://hcaptcha.com/siteverify,
-    XCAPTCHA_API_URL=https://hcaptcha.com/1/api.js,
-    XCAPTCHA_DIV_CLASS=h-captcha
+    XCAPTCHA_VERIFY_URL='https://hcaptcha.com/siteverify',
+    XCAPTCHA_API_URL='https://hcaptcha.com/1/api.js',
+    XCAPTCHA_DIV_CLASS='h-captcha'
 )
 hcaptcha = XCaptcha(app=app)
 
