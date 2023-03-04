@@ -19,7 +19,7 @@ migrate = Migrate(app, db, render_as_batch=True, compare_type=True)
 login = LoginManager(app)
 login.login_view = 'login'
 bootstrap = Bootstrap(app)
-hcaptcha = XCaptcha(app)
+hcaptcha = XCaptcha(app=app)
 
 from app import routes, models, errors
 login.login_message = u'Please sign in to access this page.'
