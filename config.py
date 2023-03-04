@@ -14,12 +14,8 @@ class Config(object):
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-    XCAPTCHA_SITE_KEY = os.environ.get('HCAPTCHA_SITE_KEY')
-    XCAPTCHA_SECRET_KEY = os.environ.get('HCAPTCHA_SECRET_KEY')
-    XCAPTCHA_VERIFY_URL = os.environ.get('XCAPTCHA_VERIFY_URL')
-    XCAPTCHA_API_URL = os.environ.get('XCAPTCHA_API_URL')
-    XCAPTCHA_DIV_CLASS = os.environ.get('XCAPTCHA_DIV_CLASS')
-    XCAPTCHA_THEME = os.environ.get('XCAPTCHA_THEME')
+    HCAPTCHA_SITE_KEY = os.environ.get('HCAPTCHA_SITE_KEY')
+    HCAPTCHA_SECRET_KEY = os.environ.get('HCAPTCHA_SECRET_KEY')
     MAILJET_KEY = os.environ.get('MAILJET_KEY')
     MAILJET_SECRET = os.environ.get('MAILJET_SECRET')
     ADMINS = [os.environ.get('ADMINS')]

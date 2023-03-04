@@ -9,7 +9,7 @@ from flask_login import LoginManager, current_user
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 from flask_bootstrap import Bootstrap
-from flask_xcaptcha import XCaptcha
+from flask_hcaptcha import hCaptcha
 from functools import wraps
 
 app = Flask(__name__)
@@ -19,15 +19,7 @@ migrate = Migrate(app, db, render_as_batch=True, compare_type=True)
 login = LoginManager(app)
 login.login_view = 'login'
 bootstrap = Bootstrap(app)
-
-app.config.update(
-    XCAPTCHA_SITE_KEY=app.config['XCAPTCHA_SITE_KEY'],
-    XCAPTCHA_SECRET_KEY=app.config['XCAPTCHA_SECRET_KEY'],
-    XCAPTCHA_VERIFY_URL='https://hcaptcha.com/siteverify',
-    XCAPTCHA_API_URL='https://hcaptcha.com/1/api.js',
-    XCAPTCHA_DIV_CLASS='h-captcha'
-)
-hcaptcha = XCaptcha(app=app)
+hcaptcha = hCaptcha(app)
 
 from app import routes, models, errors
 login.login_message = u'Please sign in to access this page.'
