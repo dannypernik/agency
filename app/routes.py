@@ -70,6 +70,11 @@ def about():
     return render_template('about.html', title="About")
 
 
+@app.route('/portfolio')
+def portfolio():
+    return render_template('portfolio.html', title="Portfolio")
+
+
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
     if current_user.is_authenticated:

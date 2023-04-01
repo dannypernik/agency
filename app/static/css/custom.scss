@@ -4,6 +4,15 @@ $line-height-base: 1.4;
 $lead-font-size: calc(2rem + 0.1vw);
 $lead-font-weight: inherit;
 $spacer: 2rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2,
+  6: $spacer * 3,
+);
 $primary-color: rgb(5, 40, 55);
 $secondary-color: #e79b32;//#26bad1;//4ad1cc;//58bba4;
 $highlight-color: #d35137;//e97435;;
@@ -78,6 +87,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
+  font-weight: 700;
   font-size: calc(2.2rem + 0.5vw);
 }
 
@@ -318,59 +328,6 @@ select {
   padding: 0.5rem 1rem;
 }
 
-// Styling for dark backgrounds //
-
-.inverse {
-  background-color: $primary-color;
-  color: white;
-
-  a {
-    color: $secondary-color;
-  }
-
-  button, .btn, input[type='submit'] {
-    color: white;
-
-    &:hover {
-      background-color: darken($secondary-color, 10%);
-    }
-
-    &:focus {
-      background-color: darken($secondary-color, 8%);
-    }
-
-    &:active {
-      border-color: $primary-color;
-    }
-  }
-
-  a.d-inline {
-    color: $secondary-color;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  .home-nav a:hover, .home-next a:hover h4, #menu-btn:hover {
-    font-weight: 600;
-  }
-
-  input[type='text'], textarea {
-    color: white;
-    border-color: white;
-
-    &:focus {
-      border-color: $secondary-color;
-    }
-  }
-
-  ::placeholder {
-    color: white;
-    opacity: 0.5;
-  }
-}
-
 .img-fluid {
   max-width: 100%;
   height: auto;
@@ -542,7 +499,7 @@ g path {
 
 .home-next {
   display: table;
-  margin: 1rem auto 14rem;
+  margin: 1rem auto 0;
   text-align: center;
 }
 
@@ -562,17 +519,11 @@ g path {
   top: 0;
   background-color: $primary-color;
   z-index: 100;
-
-  &.translucent {
-    padding: 2vw 0 3rem;
-    pointer-events: none;
-    background: linear-gradient(180deg, $primary-color, rgba($primary-color, 0.8) 70%, transparent);
-  }
 }
 
 #nav-img {
   height: 3.5rem;
-  margin: 2.5rem 0;
+  margin: 3.5rem 0;
   max-width: 100%;
   pointer-events: all;
 }
@@ -592,6 +543,11 @@ g path {
   height: 25px;
   padding-left: 15px;
   margin-top: 1px;
+}
+
+#menu-icon-inline {
+  height: 20px;
+  margin: 0 0.25rem 0.25rem;
 }
 
 .drawer__wrapper {
@@ -628,6 +584,69 @@ g path {
   background-color: $primary-color;
   color: white;
   margin-top: 11rem;
+}
+
+// Styling for dark backgrounds //
+
+.inverse {
+  background-color: $primary-color;
+  color: white;
+
+  button, .btn, input[type='submit'] {
+    color: white;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+
+    &:focus {
+      background-color: darken($secondary-color, 8%);
+    }
+
+    &:active {
+      border-color: $primary-color;
+    }
+  }
+
+  a.d-inline {
+    color: $secondary-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .sticky-header {
+    pointer-events: none;
+    background: linear-gradient(180deg, $primary-color, rgba($primary-color, 0.8) 70%, transparent);
+  }
+
+  .home-next a {
+    color: $secondary-color;
+  }
+
+  .home-nav a:hover, .home-next a:hover h4, #menu-btn:hover {
+    font-weight: 600;
+  }
+
+  input[type='text'], textarea {
+    color: white;
+    border-color: white;
+
+    &:focus {
+      border-color: $secondary-color;
+    }
+  }
+
+  ::placeholder {
+    color: white;
+    opacity: 0.5;
+  }
+
+  ::selection {
+    color: white;
+    background-color: #7db0b9;
+  }
 }
 
 // Single-attribute classes

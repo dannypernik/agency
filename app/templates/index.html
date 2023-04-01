@@ -2,9 +2,7 @@
 
 {% block navbar %}{% endblock navbar %}
 
-{% block body_class %}
-  inverse
-{% endblock body_class %}
+{% block body_class %} inverse {% endblock body_class %}
 
 {% block container %}
   <video id="welcome-vid" muted autoPlay playsInline poster="{{ url_for('static', filename='img/home-bg-sm.webp') }}">
@@ -36,9 +34,9 @@
           </div>
           <div class="home-nav col offset-1 offset-md-4 offset-lg-5 offset-xl-6 col-md-7 col-lg-6 col-xl-5">
             <div><a href="#welcome" data-text="home">home</a></div>
+            <div><a href="{{ url_for('portfolio') }}" data-text="portfolio">portfolio</a></div>
             <!-- <div><a href="{{ url_for('about') }}" data-text="about">about</a></div> -->
             <div><a href="#contact" data-text="contact">contact</a></div>
-            <div><a href="{{ url_for('signin') }}" data-text="Sign in">sign in</a></div>
           </div>
         </div>
       </div>
@@ -81,8 +79,8 @@
   {% include "_header-index.html" %}
 
   <div id="home-2" class="home-section">
-    <div class="row">
-      <div class="col-10 col-md-8 offset-1">
+    <div class="row justify-content-center justify-content-md-start">
+      <div class="col-11 col-md-8 offset-md-1">
         <h1>We feel your pain</h1>
         <p class="h3">
           ...because we've been in your position: holding a vision but needing help to realize it.
@@ -118,8 +116,8 @@
   </div>
 
   <div id="home-3" class="home-section">
-    <div class="row justify-content-center">
-      <div class="col-10 col-md-8 offset-md-2">
+    <div class="row justify-content-center justify-content-md-start">
+      <div class="col-11 col-md-8 offset-md-3">
         <h1>Details matter.</h1>
         <p class="h3">
           One crucial aspect of successful creation is ensuring that your vision is fully
@@ -152,8 +150,8 @@
   </div>
 
   <div id="home-4" class="home-section">
-    <div class="row justify-content-start">
-      <div class="col-10 col-md-8 offset-1">
+    <div class="row justify-content-center justify-content-md-start">
+      <div class="col-11 col-md-8 offset-md-1">
         <h1>Our capabilities</h1>
         <p class="h3">
           We build fast and well-maintained systems to address all of your business needs.
@@ -185,7 +183,7 @@
   <div id="contact" class="home-section end">
     <div class="row justify-content-center">
       <div class="col-11 col-md-8">
-        <h1 class="mb-4">Send us a message</h1>
+        <h1>Send us a message</h1>
 
         <form id="inquiry-form" action="" method="post">
           {{ form.hidden_tag() }}
@@ -193,7 +191,7 @@
           <p class="mb-3">{{ form.email }}</p>
           <p class="mb-3">{{ form.phone }}</p>
           <p class="mb-3">{{ form.message(rows='4') }}</p>
-          
+
           {{ hcaptcha }}
           {{ form.submit }}
         </form>

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block body_class %} inverse {% endblock body_class %}
+
+{% block content %}
+  <h1>Our work</h1>
+  <p class="h4 mb-5">
+    From small business websites to online marketplaces to digital currencies, we've
+    designed, developed, and delivered. Check out a sample of our favorite projects below:
+  </p>
+  
+  <div class="row g-0">
+    <div class="col-12 col-sm-7 col-lg-5 mb-3">
+      <h2 class="d-lg-none">OpenCurrents</h2>
+      <img src="{{ url_for('static', filename='img/oc-cleanup.jpg') }}" class="img-fluid my-2">
+    </div>
+    <div class="col-12 col-lg-6 offset-lg-1">
+      <h2 class="d-none d-lg-block">OpenCurrents</h2>
+      <p>
+        Prior to starting Creators Web, Danny and Nicko joined forces on OpenCurrents, a
+        multi-sided platform that rewarded volunteers of nonprofits with a new digital
+        currency: the Current.
+      </p>
+      <p>  
+        Volunteers earned 1 Current for each hour worked, and businesses in the community
+        accepted Currents for partial payment. Nonprofits got new volunteers, businesses
+        got new customers, and volunteers got paid. In fact, participating businesses
+        agreed to value Currents above the hourly rate for a living wage.
+      </p>
+      <p>
+        We've created demo accounts for you to experience the platform from the
+        perspective of a volunteer, a nonprofit, and a business. The account details will
+        be displayed on the login page.
+      </p>
+
+      <a href="http://opencurrents.creatorsweb.co" class="btn mt-1" target="_blank">
+        Visit site
+      </a>
+    </div>
+  </div>
+
+  <div class="row title-margin g-0 mt-6">
+    <div class="col-12 col-sm-7 col-lg-5 offset-lg-1 order-lg-2 mb-3">
+      <h2 class="d-lg-none">Hotswords</h2>
+      <img src="{{ url_for('static', filename='img/hotswords.jpg') }}" class="img-fluid my-2">
+    </div>
+
+    <div class="col-12 col-lg-6 order-lg-1">
+      <h2 class="d-none d-lg-block">Hotswords</h2>
+      <p>
+        After a couple underwhelming attempts to bring his delicious Jordanian cuisine to
+        the American masses, Mohammad turned to us for help. While we weren't sold on his
+        newest business name &ndash; "Grill Stick" &ndash; we knew what he was going for.
+        As we witnessed him masterfully prepare meats on swordlike skewers over an open
+        flame, HOTSWORDS was born.
+      </p>
+      <p>
+        Relying on orders from delivery apps is a death sentence for restaurants. These
+        apps regularly take 20-30% of the order price when a customer purchases through
+        them. This is why it's absolutely critical for a resaurant's website to be
+        foolproof. A single confusing experience may mean that a customer returns to the
+        comfort of a delivery app, and the restaurant will sacrifice a quarter of their
+        revenue for the life of that customer.</p>
+      <p>
+        For Hotswords, we simplified. <span class="text-nowrap">No
+        <img id="menu-icon-inline" src="{{ url_for('static', filename='img/menu.svg') }}"
+        class="d-inline-block"></span>
+        button hiding your access to food. The "MENU" link is right at the top, or you
+        can simply scroll down to see your options. Everything you need is on a single
+        page.
+      </p>
+
+      <a href="https://www.hotswords.com" class="btn mt-1" target="_blank">
+        Visit site
+      </a>
+    </div>
+  </div>
+
+  <div class="row title-margin g-0">
+    <div class="col-12 col-sm-7 col-lg-5 mb-3">
+      <h2 class="d-lg-none">Open Path Tutoring</h2>
+      <img src="{{ url_for('static', filename='img/open-path-tutoring.jpg') }}" class="img-fluid my-2">
+    </div>
+    <div class="col-12 col-lg-6 offset-lg-1">
+      <h2 class="d-none d-lg-block">Open Path Tutoring</h2>
+      <p>
+       Prior to Creators Web, Danny Pernik owned and operated Open Path Tutoring. While
+       his web development expertise is focused on the front end, he wanted to challenge
+       himself to build the back end as well. The launch of the website in 2020 was only
+       the beginning, however. The learning process opened up all kinds of possibilities,
+       and he found one avenue after another for adding value to the business through
+       programming and automation.
+      </p>
+      <p>
+        For example, Danny connected his MySQL  Google Calendar and Sheets APIs to send reminder
+        emails to his clients in advance of scheduled sessions, as well as emails to
+        himself when a customer's paid balance was low. He built a MySQL database
+        consisting of students, parents, tutors, admins, and test dates that would notify
+        relevant parties when registration deadlines were approaching for chosen dates.
+        He also automated the creation of Math and Language concept worksheets with Google
+        Apps Script. While the front end will continue to be Danny's primary domain, he
+        can support the back end in ways that were not possible a few years ago.
+      </p>
+
+      <a href="https://www.openpathtutoring.com" class="btn mt-1" target="_blank">
+        Visit site
+      </a>
+    </div>
+  </div>
+{% endblock content %}
