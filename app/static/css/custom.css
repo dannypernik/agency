@@ -7348,7 +7348,7 @@ div.message a {
   position: relative;
   display: block;
   margin: 5rem auto;
-  height: calc(12rem + 3vw);
+  height: calc(11rem + 3vw);
 }
 
 #home-title {
