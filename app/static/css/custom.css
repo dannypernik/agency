@@ -7287,7 +7287,7 @@ div.message a {
 }
 
 .title-margin {
-  padding-top: calc(2rem + 3vw);
+  padding-top: calc(2rem + 2vw);
 }
 
 #welcome {
@@ -7514,6 +7514,12 @@ g path {
 .inverse button:active, .inverse .btn:active, .inverse input[type=submit]:active {
   border-color: rgb(5, 40, 55);
 }
+.inverse button.sec, .inverse .btn.sec, .inverse input[type=submit].sec {
+  border: 1px solid white;
+}
+.inverse button.sec:hover, .inverse .btn.sec:hover, .inverse input[type=submit].sec:hover {
+  background-color: #0b5b7d;
+}
 .inverse a.d-inline {
   color: #e79b32;
 }
@@ -7530,16 +7536,21 @@ g path {
 .inverse .home-nav a:hover, .inverse .home-next a:hover h4, .inverse .home-next a:hover .h4, .inverse #menu-btn:hover {
   font-weight: 600;
 }
-.inverse input[type=text], .inverse textarea {
+.inverse input, .inverse textarea {
   color: white;
   border-color: white;
 }
-.inverse input[type=text]:focus, .inverse textarea:focus {
+.inverse input[type=submit], .inverse textarea[type=submit] {
+  border-color: #e79b32;
+}
+.inverse input[type=time]::-webkit-calendar-picker-indicator, .inverse textarea[type=time]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+.inverse input:focus, .inverse textarea:focus {
   border-color: #e79b32;
 }
 .inverse ::placeholder {
   color: white;
-  opacity: 0.5;
 }
 .inverse ::selection {
   color: white;

@@ -357,7 +357,7 @@ div.message {
 }
 
 .title-margin {
-  padding-top: calc(2rem + 3vw);
+  padding-top: calc(2rem + 2vw);
 }
 
 // Home page //
@@ -607,6 +607,14 @@ g path {
     &:active {
       border-color: $primary-color;
     }
+
+    &.sec {
+      border: 1px solid white;
+      
+      &:hover {
+        background-color: lighten($primary-color, 15%);
+      }
+    }
   }
 
   a.d-inline {
@@ -630,9 +638,17 @@ g path {
     font-weight: 600;
   }
 
-  input[type='text'], textarea {
+  input, textarea {
     color: white;
     border-color: white;
+
+    &[type="submit"] {
+      border-color: $secondary-color;
+    }
+
+    &[type="time"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+    }
 
     &:focus {
       border-color: $secondary-color;
@@ -641,7 +657,6 @@ g path {
 
   ::placeholder {
     color: white;
-    opacity: 0.5;
   }
 
   ::selection {
