@@ -190,9 +190,12 @@
           <p class="mb-3">{{ form.first_name }}</p>
           <p class="mb-3">{{ form.email }}</p>
           <p class="mb-3">{{ form.phone }}</p>
-          <p class="mb-3">{{ form.message(rows='4') }}</p>
-
-          {{ hcaptcha }}
+          <div class="d-md-flex">
+            {{ form.message(rows='3', class="flex-grow-1") }}
+            <div class="mt-md-3 ms-md-3">
+              {{ hcaptcha }}
+            </div>
+          </div>
           {{ form.submit }}
         </form>
       </div>

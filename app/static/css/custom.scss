@@ -532,7 +532,7 @@ g path {
 #menu-btn {
   display: flex;
   justify-content: flex-end;
-  margin: 3rem 0 3rem auto;
+  margin: 4rem 0 3rem auto;
   color: white;
   text-decoration: none;
   cursor: pointer;
@@ -551,20 +551,35 @@ g path {
   margin: 0 0.25rem 0.25rem;
 }
 
+.drawer__header {
+  border-bottom: none;
+  padding: 1rem 4.5rem;
+}
+
 .drawer__wrapper {
   background-color: $primary-color;
-  box-shadow: none;
+  width: 67%;
+  max-width: 400px;
 }
 
 .drawer__content a {
   display: inline;
 }
 
+.menu-close {
+  font-size: 4rem;
+  cursor: pointer;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
 .menu-link {
   height: 60px;
-  border-bottom: 1px solid white;
   color: white;
   transition: 0.3s;
+  text-align: end;
 
   &:hover {
     background-color: darken($secondary-color, 8%);
@@ -572,7 +587,7 @@ g path {
   }
 
   p {
-    padding: 1.7rem;
+    padding: 1.7rem 5rem;
     cursor: pointer;
   }
 }
