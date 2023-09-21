@@ -187,9 +187,9 @@
 
         <form id="inquiry-form" action="" method="post">
           {{ form.hidden_tag() }}
-          <p class="mb-3">{{ form.first_name }}</p>
-          <p class="mb-3">{{ form.email }}</p>
-          <p class="mb-3">{{ form.phone }}</p>
+          {{ form.first_name }}
+          {{ form.email }}
+          {{ form.phone }}
           <div class="d-md-flex">
             {{ form.message(rows='3', class="flex-grow-1") }}
             <div class="mt-md-3 ms-md-3">
