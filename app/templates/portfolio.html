@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 
-{% block body_class %} inverse {% endblock body_class %}
-
 {% block content %}
   <h1>Our work</h1>
   <p class="h4 mb-5">
@@ -39,7 +37,7 @@
     </div>
   </div>
 
-  <div class="row title-margin g-0 mt-6">
+  <div class="row g-0 mt-6">
     <div class="col-12 col-sm-7 col-lg-5 offset-lg-1 order-lg-2 mb-3">
       <h2 class="d-lg-none">Hotswords</h2>
       <img src="{{ url_for('static', filename='img/hotswords.jpg') }}" class="img-fluid my-2">
@@ -76,7 +74,7 @@
     </div>
   </div>
 
-  <div class="row title-margin g-0 mt-6">
+  <div class="row g-0 mt-6">
     <div class="col-12 col-sm-7 col-lg-5 mb-3">
       <h2 class="d-lg-none">Open Path Tutoring</h2>
       <img src="{{ url_for('static', filename='img/open-path-tutoring.jpg') }}" class="img-fluid my-2">
