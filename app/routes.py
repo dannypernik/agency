@@ -292,6 +292,7 @@ def edit_user(id):
 
 
 @app.route('/time')
+@admin_required
 def time():
     form = TimeEntryForm()
     if form.validate_on_submit():
