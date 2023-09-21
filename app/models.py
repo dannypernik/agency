@@ -54,3 +54,13 @@ class User(UserMixin, db.Model):
 @login.user_loader
 def load_user(id):
     return User.query.get(id)
+
+
+class TimeEntry(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.String(64), index=True)
+    project = db.Column(db.String(64), index=True)
+    category = db.Column(db.String(64), index=True)
+    modifier = db.Column(db.String(64))
+    start_time = db.Column(db.DateTime(), index=True)
+    end_time = db.Column(db.DateTime())

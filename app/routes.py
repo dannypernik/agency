@@ -3,9 +3,9 @@ from flask import Flask, render_template, flash, Markup, redirect, url_for, \
     request, send_from_directory, send_file, make_response
 from app import app, db, login, hcaptcha
 from app.forms import ContactForm, EmailListForm, SignupForm, LoginForm, UserForm, \
-    RequestPasswordResetForm, ResetPasswordForm
+    RequestPasswordResetForm, ResetPasswordForm, TimeEntryForm
 from flask_login import current_user, login_user, logout_user, login_required, login_url
-from app.models import User
+from app.models import User, TimeEntry
 from werkzeug.urls import url_parse
 from datetime import datetime
 from app.email import send_contact_email, send_confirmation_email, send_verification_email, \
@@ -289,6 +289,22 @@ def edit_user(id):
         form.parent_id.data=user.parent_id
         form.is_admin.data=user.is_admin
     return render_template('edit-user.html', title='Edit User', form=form, user=user)
+
+
+@app.route('/time')
+def time():
+    form = TimeEntryForm()
+    if form.validate_on_submit():
+        entry = TimeEntry(description=form.description.data, project=form.project.data, category=form.category.data, \
+            start_time=form.start_time.data, end_time=form.end_time.data, modifier=form.modifier.data)
+        try:
+            db.session.add(entry)
+            db.session.commit()
+            flash('Time entry added')
+        except:
+            db.session.rollback()
+            flash('Time entry could not be added', 'error')
+    return render_template('time.html', title="Time tracker", form=form)
 
 
 @app.route("/download/<filename>")

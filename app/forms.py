@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm, RecaptchaField
 from wtforms import StringField, BooleanField, PasswordField, TextAreaField, \
     SubmitField, IntegerField, SelectField, validators
-from wtforms.fields.html5 import DateField
+from wtforms.fields.html5 import DateField, TimeField
 from wtforms.validators import ValidationError, InputRequired, DataRequired, \
     Email, EqualTo, Length
 from app.models import User
@@ -100,3 +100,18 @@ class UserForm(FlaskForm):
             user = User.query.filter_by(email=email.data).first()
             if user is not None:
                 raise ValidationError('An account already exists for ' + user.email + '.')
+
+
+class TimeEntryForm(FlaskForm):
+    description = StringField('Description', render_kw={"placeholder": "Description"}, \
+        validators=[InputRequired()])
+    project = StringField('Project', render_kw={"placeholder": "Project"}, \
+        validators=[InputRequired()])
+    category = StringField('Category', render_kw={"placeholder": "Category"}, \
+        validators=[InputRequired()])
+    modifier = StringField('Modifier', render_kw={"placeholder": "Modifier"}, \
+        validators=[InputRequired()])
+    start_time = TimeField('Start time', validators=[InputRequired()])
+    end_time = TimeField('End time')
+    save = SubmitField()
+    
