@@ -38,7 +38,7 @@ def admin_required(f):
         else:
             flash('You must have administrator privileges to access this page.', 'error')
             logout_user()
-            return redirect(login_url('signin', next_url=request.url))
+            return redirect(login_url('login', next_url=request.url))
     return wrap
 
 
@@ -75,14 +75,30 @@ def portfolio():
     return render_template('portfolio.html', title="Portfolio")
 
 
-@app.route('/signin', methods=['GET', 'POST'])
-def signin():
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
     if current_user.is_authenticated:
         flash('You are already signed in.')
         return redirect(url_for('start_page'))
-    form = LoginForm()
-    signup_form = SignupForm()
-    return render_template('signin.html', title='Sign in', form=form, signup_form=signup_form)
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user is None or not user.check_password(form.password.data):
+            flash('Invalid username or password', 'error')
+            return redirect(url_for('login'))
+        login_user(user)
+        if user.is_verified != True:
+            email_status = send_verification_email(user)
+            if email_status == 200:
+                flash('Please check your inbox to verify your email.')
+            else:
+                flash('Verification email did not send. Please contact ' + team_email, 'error')
+        next_page = request.args.get('next')
+        print('next:', next_page)
+        if not next_page or url_parse(next_page).netloc != '':
+            return redirect(url_for('start_page'))
+        return redirect(next_page)
+    return render_template('login.html', title='Log in', form=form)
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -108,37 +124,10 @@ def signup():
     return render_template('signin.html', title='Sign in', form=form, signup_form=signup_form)
 
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if current_user.is_authenticated:
-        flash('You are already signed in.')
-        return redirect(url_for('start_page'))
-    form = LoginForm()
-    signup_form = SignupForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
-        if user is None or not user.check_password(form.password.data):
-            flash('Invalid username or password', 'error')
-            return redirect(url_for('signin'))
-        if user.is_verified != True:
-            email_status = send_verification_email(user)
-            if email_status == 200:
-                flash('Please check your inbox to verify your email before logging in.')
-            else:
-                flash('Verification email did not send. Please contact ' + team_email, 'error')
-            return redirect(url_for('signin'))
-        login_user(user)
-        next = request.args.get('next')
-        if not next or url_parse(next).netloc != '':
-            return redirect(url_for('start_page'))
-        return redirect(next)
-    return render_template('signin.html', title='Sign in', form=form, signup_form=signup_form)
-
-
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('signin'))
+    return redirect(url_for('login'))
 
 
 @app.route('/start-page')
@@ -162,7 +151,7 @@ def verify_email(token):
         return redirect(url_for('start_page'))
     else:
         flash('Your verification link is expired or invalid. Log in to receive a new link.')
-        return redirect(url_for('signin'))
+        return redirect(url_for('login'))
 
 
 @app.route('/request-password-reset', methods=['GET', 'POST'])
@@ -183,7 +172,7 @@ def request_password_reset():
                 flash('Email failed to send, please contact ' + team_email, 'error')
         else:
             flash('Check your email for instructions to reset your password.')
-        return redirect(url_for('signin'))
+        return redirect(url_for('login'))
     return render_template('request-password-reset.html', title='Reset password', form=form)
 
 
